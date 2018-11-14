@@ -10,8 +10,11 @@
 #import "TwoNum_01.h"
 #import "ReverseNum_07.h"
 #import "AddTwoNumbers_02.h"
+#import "LongestSubstring_03.h"
+#import "FindMedianSortedArrays_04.h"
 #pragma mark - Test
 /**
+ 01
  给定 nums = [2, 7, 11, 15], target = 9
  
  因为 nums[0] + nums[1] = 2 + 7 = 9
@@ -27,6 +30,7 @@ void TwoNums() {
 }
 
 /**
+ 02
  输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
  输出：7 -> 0 -> 8
  原因：342 + 465 = 807
@@ -42,6 +46,36 @@ void addTwoNums(){
 }
 
 /**
+ 03
+ 输入: "abcabcbb" / "pwwkew"
+ 输出: 3
+ 
+ */
+void LongestSubstring(){
+    NSUInteger retval = [LongestSubstring_03 lengthOfLongestSubstring:@"pwwkew"];
+    if (retval == 3) {
+        NSLog(@"03--LongestSubstring_03 success");
+    }
+}
+
+/**
+ 04
+ nums1 = [1, 2]
+ nums2 = [3, 4]
+ 
+ 中位数是 (2 + 3)/2 = 2.5
+ */
+void FindMedianSortedArrays(){
+    NSArray * A = @[@1,@2];
+    NSArray * B =@[@3,@4];
+    float lo = [FindMedianSortedArrays_04 findMedianSortedArrays:A and:B];
+    if (lo == 2.5) {
+        NSLog(@"04-- FindMedianSortedArrays_04 success");
+    }
+}
+
+/**
+ 07
  输入: 123
  输出: 321
  */
@@ -57,6 +91,8 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         TwoNums();
         addTwoNums();
+        LongestSubstring();
+        FindMedianSortedArrays();
         ReverseNum();
     }
     return 0;
