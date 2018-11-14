@@ -41,18 +41,13 @@
 {
     ListNode * l1 = self;
     ListNode * l2 = object;
-    BOOL retval = NO;
-    while (l1.next && l2.next) {
-        if (l1.val != l2.val) {
-            break;
-        } else {
-            l1 = l1.next;
-            l2 = l2.next;
-            if ((l1.val == l2.val) && !l1.next &&!l2.next) {
-                retval = YES;
-            }
-        }
+    while(!l1 && !l2 && l1.val==l2.val){
+        l1 = l1.next;
+        l2 = l2.next;
     }
-    return retval;
+    if ((l1.val == l2.val) && !l1.next &&!l2.next) {
+        return YES;
+    }
+    return NO;
 }
 @end
