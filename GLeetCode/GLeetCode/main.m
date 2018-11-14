@@ -13,6 +13,7 @@
 #import "LongestSubstring_03.h"
 #import "FindMedianSortedArrays_04.h"
 #import "LongestPalindrome_05.h"
+#import "Palindrome_09.h"
 #pragma mark - Test
 /**
  01
@@ -83,7 +84,10 @@ void FindMedianSortedArrays(){
  注意: "aba"也是一个有效答案。
  */
 void LongestPalindrome(){
-    [LongestPalindrome_05 longestPalindrome:@"cbbd"];
+//    NSString * string = [LongestPalindrome_05 longestPalindrome:@"bababb"];
+    LongestPalindrome_05 *object = [LongestPalindrome_05 new];
+    NSString * string2 = [object longestPalindrome:@"aba"];
+    NSLog(@"string");
 }
 
 /**
@@ -97,7 +101,26 @@ void ReverseNum(){
         NSLog(@"ReverseNum_07 success");
     }
 }
-
+/**
+ 输入: 121
+ 输出: true
+ 示例 2:
+ 
+ 输入: -121
+ 输出: false
+ 解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
+ 示例 3:
+ 
+ 输入: 10
+ 输出: false
+ 解释: 从右向左读, 为 01 。因此它不是一个回文数。
+ */
+void Palindrome(){
+    BOOL tf = [Palindrome_09 isPalindrome:121121];
+    if (tf) {
+        NSLog(@"Palindrome_09 success");
+    }
+}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -105,8 +128,9 @@ int main(int argc, const char * argv[]) {
         addTwoNums();
         LongestSubstring();
         FindMedianSortedArrays();
-        LongestPalindrome();
+//        LongestPalindrome();
         ReverseNum();
+        Palindrome();
     }
     return 0;
 }
