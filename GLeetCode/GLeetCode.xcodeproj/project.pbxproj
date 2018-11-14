@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B3C9531219BF76D00BB56F4 /* LongestSubstring_03.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C9530219BF76D00BB56F4 /* LongestSubstring_03.m */; };
 		2B3C9534219C108A00BB56F4 /* FindMedianSortedArrays_04.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C9533219C108A00BB56F4 /* FindMedianSortedArrays_04.m */; };
+		2B3C9537219C500B00BB56F4 /* LongestPalindrome_05.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C9536219C500B00BB56F4 /* LongestPalindrome_05.m */; };
 		2B56929E219B14870033096D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B56929D219B14870033096D /* main.m */; };
 		2B5692A6219B14EA0033096D /* TwoNum_01.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5692A5219B14EA0033096D /* TwoNum_01.m */; };
 		2B5692A9219B1A330033096D /* ReverseNum_07.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5692A8219B1A330033096D /* ReverseNum_07.m */; };
@@ -33,6 +34,8 @@
 		2B3C9530219BF76D00BB56F4 /* LongestSubstring_03.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LongestSubstring_03.m; sourceTree = "<group>"; };
 		2B3C9532219C108A00BB56F4 /* FindMedianSortedArrays_04.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindMedianSortedArrays_04.h; sourceTree = "<group>"; };
 		2B3C9533219C108A00BB56F4 /* FindMedianSortedArrays_04.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindMedianSortedArrays_04.m; sourceTree = "<group>"; };
+		2B3C9535219C500B00BB56F4 /* LongestPalindrome_05.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LongestPalindrome_05.h; sourceTree = "<group>"; };
+		2B3C9536219C500B00BB56F4 /* LongestPalindrome_05.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LongestPalindrome_05.m; sourceTree = "<group>"; };
 		2B56929A219B14870033096D /* GLeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GLeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B56929D219B14870033096D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B5692A4219B14EA0033096D /* TwoNum_01.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoNum_01.h; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				2B3C9530219BF76D00BB56F4 /* LongestSubstring_03.m */,
 				2B3C9532219C108A00BB56F4 /* FindMedianSortedArrays_04.h */,
 				2B3C9533219C108A00BB56F4 /* FindMedianSortedArrays_04.m */,
+				2B3C9535219C500B00BB56F4 /* LongestPalindrome_05.h */,
+				2B3C9536219C500B00BB56F4 /* LongestPalindrome_05.m */,
 				2B5692A7219B1A330033096D /* ReverseNum_07.h */,
 				2B5692A8219B1A330033096D /* ReverseNum_07.m */,
 				2B5692AD219B240C0033096D /* ListNode.h */,
@@ -152,6 +157,7 @@
 				2B5692AC219B1FB00033096D /* AddTwoNumbers_02.m in Sources */,
 				2B3C9534219C108A00BB56F4 /* FindMedianSortedArrays_04.m in Sources */,
 				2B56929E219B14870033096D /* main.m in Sources */,
+				2B3C9537219C500B00BB56F4 /* LongestPalindrome_05.m in Sources */,
 				2B3C9531219BF76D00BB56F4 /* LongestSubstring_03.m in Sources */,
 				2B5692AF219B240C0033096D /* ListNode.m in Sources */,
 				2B5692A9219B1A330033096D /* ReverseNum_07.m in Sources */,

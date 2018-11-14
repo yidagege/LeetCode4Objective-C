@@ -128,7 +128,6 @@
  - C2 = 0 —— 数组1整体都比中值小，L1
 
  */
-
 + (float)findMedianSortedArrays:(NSArray *)arrA and:(NSArray *)arrB
 {
     NSUInteger n = arrA.count;
@@ -155,4 +154,33 @@
     }
     return (MAX(l1, l2)+MIN(r1, r2))/2.0;
 }
+
++ (float)findTopK:(NSUInteger)topK sortedArrays:(NSArray *)arrA and:(NSArray *)arrB
+{
+    NSUInteger n = arrA.count;
+    NSUInteger m = arrB.count;
+    if (n>m) { ///保证数组a是最短的
+        return [self findMedianSortedArrays:arrB and:arrA];
+    }
+    NSUInteger l1 = 0,l2 = 0,r1 = 0,r2 = 0,c1,c2,lo = 0, trick = n;
+    
+    while (lo <= trick) {
+        c1 = topK/2;//C1是二分的结果
+        c2 = topK - c1;
+        l1 = (c1 ==0) ? 0 : [arrA[(c1-1)] integerValue];
+        r1 = (c1 == n) ? NSUIntegerMax : [arrA[c1] integerValue];
+        l2 = (c2 == 0) ? 0 : [arrB[(c2-1)] integerValue];
+        r2 = (c2 ==m) ? NSUIntegerMax : [arrB[c2] integerValue];
+        
+        if (l1>r2) {
+            trick = c1 - 1;
+        } else if (l2 > r1) {
+            lo = c1 + 1;
+        } else {
+            break;
+        }
+    }
+    return (MAX(l1, l2));
+}
+
 @end

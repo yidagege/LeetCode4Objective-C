@@ -12,6 +12,7 @@
 #import "AddTwoNumbers_02.h"
 #import "LongestSubstring_03.h"
 #import "FindMedianSortedArrays_04.h"
+#import "LongestPalindrome_05.h"
 #pragma mark - Test
 /**
  01
@@ -66,12 +67,23 @@ void LongestSubstring(){
  中位数是 (2 + 3)/2 = 2.5
  */
 void FindMedianSortedArrays(){
-    NSArray * A = @[@1,@2];
-    NSArray * B =@[@3,@4];
+    NSArray * A = @[@2,@6,@23];
+    NSArray * B =@[@3,@4,@(9)];
     float lo = [FindMedianSortedArrays_04 findMedianSortedArrays:A and:B];
-    if (lo == 2.5) {
+    float temp = [FindMedianSortedArrays_04 findTopK:4 sortedArrays:A and:B];
+    if (lo == 5) {
         NSLog(@"04-- FindMedianSortedArrays_04 success");
     }
+}
+
+/**
+ 05
+ 输入: "babad"
+ 输出: "bab"
+ 注意: "aba"也是一个有效答案。
+ */
+void LongestPalindrome(){
+    [LongestPalindrome_05 longestPalindrome:@"cbbd"];
 }
 
 /**
@@ -93,6 +105,7 @@ int main(int argc, const char * argv[]) {
         addTwoNums();
         LongestSubstring();
         FindMedianSortedArrays();
+        LongestPalindrome();
         ReverseNum();
     }
     return 0;
