@@ -16,6 +16,7 @@
 		2B5692AC219B1FB00033096D /* AddTwoNumbers_02.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5692AB219B1FB00033096D /* AddTwoNumbers_02.m */; };
 		2B5692AF219B240C0033096D /* ListNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5692AE219B240C0033096D /* ListNode.m */; };
 		2B6D66A1219C80A300149FEE /* Palindrome_09.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D66A0219C80A300149FEE /* Palindrome_09.m */; };
+		2BCDEDA7219DC75D00B60E64 /* strStr_28.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDEDA6219DC75D00B60E64 /* strStr_28.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,8 @@
 		2B5692AE219B240C0033096D /* ListNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListNode.m; sourceTree = "<group>"; };
 		2B6D669F219C80A300149FEE /* Palindrome_09.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Palindrome_09.h; sourceTree = "<group>"; };
 		2B6D66A0219C80A300149FEE /* Palindrome_09.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Palindrome_09.m; sourceTree = "<group>"; };
+		2BCDEDA5219DC75D00B60E64 /* strStr_28.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strStr_28.h; sourceTree = "<group>"; };
+		2BCDEDA6219DC75D00B60E64 /* strStr_28.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = strStr_28.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 				2B5692A8219B1A330033096D /* ReverseNum_07.m */,
 				2B6D669F219C80A300149FEE /* Palindrome_09.h */,
 				2B6D66A0219C80A300149FEE /* Palindrome_09.m */,
+				2BCDEDA5219DC75D00B60E64 /* strStr_28.h */,
+				2BCDEDA6219DC75D00B60E64 /* strStr_28.m */,
 				2B5692AD219B240C0033096D /* ListNode.h */,
 				2B5692AE219B240C0033096D /* ListNode.m */,
 			);
@@ -159,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B5692A6219B14EA0033096D /* TwoNum_01.m in Sources */,
+				2BCDEDA7219DC75D00B60E64 /* strStr_28.m in Sources */,
 				2B5692AC219B1FB00033096D /* AddTwoNumbers_02.m in Sources */,
 				2B3C9534219C108A00BB56F4 /* FindMedianSortedArrays_04.m in Sources */,
 				2B56929E219B14870033096D /* main.m in Sources */,

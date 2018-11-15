@@ -14,6 +14,7 @@
 #import "FindMedianSortedArrays_04.h"
 #import "LongestPalindrome_05.h"
 #import "Palindrome_09.h"
+#import "strStr_28.h"
 #pragma mark - Test
 /**
  01
@@ -122,6 +123,19 @@ void Palindrome(){
     }
 }
 
+/**
+ 示例 1:
+ 输入: haystack = "hello", needle = "ll"
+ 输出: 2
+ 示例 2:
+ 输入: haystack = "aaaaa", needle = "bba"
+ 输出: -1
+ */
+void strStr(){
+    int loc = [strStr_28 str:@"hello" Str:@"ll"];
+    
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         TwoNums();
@@ -131,6 +145,7 @@ int main(int argc, const char * argv[]) {
 //        LongestPalindrome();
         ReverseNum();
         Palindrome();
+        strStr();
     }
     return 0;
 }
