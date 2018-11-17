@@ -19,6 +19,8 @@
 #import "MergeTwoLists_21.h"
 #import "RemoveDuplicates_26.h"
 #import "SearchInsert_35.h"
+#import "MaxSubArray_53.h"
+
 #pragma mark - Test
 /**
  01
@@ -199,6 +201,18 @@ void SearchInsert(){
     }
 }
 
+/**
+ 输入: [-2,1,-3,4,-1,2,1,-5,4],
+ 输出: 6
+ 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
+ */
+void MaxSubArray(){
+    int retval = [MaxSubArray_53 maxSubArray:@[@-2,@1,@-3,@4,@-1,@2,@1,@-5,@4]];
+    if (retval == 6) {
+        NSLog(@"MaxSubArray_53 success");
+    }
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         TwoNums();
@@ -213,6 +227,7 @@ int main(int argc, const char * argv[]) {
         MergeTwoLists();
         RemoveDuplicates();
         SearchInsert();
+        MaxSubArray();
     }
     return 0;
 }

@@ -24,9 +24,9 @@
     while (low<high) {
         mid = (low+high)*0.5;
         if ([array[mid] intValue] >target) {
-            mid -= 1;
+            low -=1;
         } else if ([array[mid] intValue] < target) {
-            mid += 1;
+            high += 1;
         } else {
             return mid;
         }
