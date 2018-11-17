@@ -38,19 +38,20 @@
     return retval.next;
 }
 
-+ (ListNode*) mergeTwoLists1:(ListNode*)l1 and:(ListNode*)l2
+/**
+ 递归调用
+ */
++ (ListNode*) mergeTwoLists2:(ListNode*)l1 and:(ListNode*)l2
 {
     if (l1 == nil) return l2;
     if (l2 == nil) return l1;
-    ListNode * head;
     if (l1.val < l2.val) {
-        head = l1;
-        head = [MergeTwoLists_21 mergeTwoLists:l1.next and:l2];
+        l1.next = [MergeTwoLists_21 mergeTwoLists:l1.next and:l2];
+        return l1;
     } else {
-        head = l2;
-        head = [MergeTwoLists_21 mergeTwoLists:l1 and:l2.next];
+        l2.next = [MergeTwoLists_21 mergeTwoLists:l1 and:l2.next];
+        return l2;
     }
-    return head;
 }
 
 @end

@@ -17,6 +17,8 @@
 #import "strStr_28.h"
 #import "LongestCommonPrefix_14.h"
 #import "MergeTwoLists_21.h"
+#import "RemoveDuplicates_26.h"
+#import "SearchInsert_35.h"
 #pragma mark - Test
 /**
  01
@@ -176,6 +178,27 @@ void MergeTwoLists(){
     }
 }
 
+void RemoveDuplicates(){
+    NSArray * array = @[@0,@0,@1,@1,@2,@2,@3,@3,@4,@4];
+    NSMutableArray * arrayM = array.mutableCopy;
+    int count = [RemoveDuplicates_26 removeDuplicates:arrayM];
+    if(count == 5) {
+        NSLog(@"RemoveDuplicates_26 success");
+    }
+}
+
+/**
+ 输入: [1,3,5,6], 5
+ 输出: 2
+ */
+void SearchInsert(){
+    
+    int loc = [SearchInsert_35 searchInsert:@[@1,@3,@5,@6] target:5];
+    if(loc == 2){
+        NSLog(@"SearchInsert_35 success");
+    }
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         TwoNums();
@@ -188,6 +211,8 @@ int main(int argc, const char * argv[]) {
         strStr();
         LongestCommonPrefix();
         MergeTwoLists();
+        RemoveDuplicates();
+        SearchInsert();
     }
     return 0;
 }
