@@ -227,7 +227,12 @@ int main(int argc, const char * argv[]) {
         MergeTwoLists();
         RemoveDuplicates();
         SearchInsert();
+        CFTimeInterval startTime = [[NSDate date] timeIntervalSince1970];
         MaxSubArray();
+        CFTimeInterval endTime = [[NSDate date] timeIntervalSince1970];
+        CFTimeInterval consumingTime = endTime - startTime;
+        NSLog(@"耗时：%@", @(consumingTime*1000));
+        
     }
     return 0;
 }

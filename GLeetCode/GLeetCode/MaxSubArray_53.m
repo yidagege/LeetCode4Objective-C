@@ -76,9 +76,47 @@
 /**
  Solution3:
  分治算法
-
+  https://blog.csdn.net/abnerwang2014/article/details/36027747
  */
-+ (int)maxSubArray2:(NSArray *)array{
++ (int)maxSubArray3:(NSArray *)array
+{
+    int len = (int)array.count;
+    int left = 0;
+    int right = len -1;
+    return [MaxSubArray_53 maxSubDivide:array left:left right:right];
+}
+
++ (int)maxSubDivide:(NSArray*)array left:(int)left right:(int)right
+{
+    if (left == right) {
+        return [array[left] intValue];
+    }
+    ///分界点
+    int center = (left + right )/2;
+    ///递归左序列最大子序列和
+    int maxLeftNum = [MaxSubArray_53 maxSubDivide:array left:left right:center];
+    ///递归右序列最大子序列和
+    int maxRightNum = [MaxSubArray_53 maxSubDivide:array left:center+1 right:right];
     
+    ///计算横跨左半部分和右半部分的最大子序列和
+    
+    ///one setp
+    ///首先是左半部分子序列中包含最后一个元素的最大子序列和
+    int leftMax = [array[center] intValue], leftSum = [array[center] intValue];
+    for (int i = center - 1; i >= left; --i) {
+        leftSum += [array[i] intValue];
+        if (leftSum > leftMax)
+            leftMax = leftSum;
+    }
+    /// 接着是右半部分子序列中包含第一个元素的最大子序列和
+    int rightMax = [array[center + 1] intValue], rightSum = [array[center + 1] intValue];
+    for (int i = center + 2; i <= right; ++i) {
+        rightSum += [array[i] intValue];
+        if (rightSum > rightMax)
+            rightMax = rightSum;
+    }
+    
+   // 返回左、右半部分子序列的最大子序列和以及横跨左、右半部分的最大子序列和中的最大者
+    return MAX(leftMax+rightMax, MAX(maxLeftNum, maxRightNum));
 }
 @end
