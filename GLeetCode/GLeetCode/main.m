@@ -16,6 +16,7 @@
 #import "Palindrome_09.h"
 #import "strStr_28.h"
 #import "LongestCommonPrefix_14.h"
+#import "MergeTwoLists_21.h"
 #pragma mark - Test
 /**
  01
@@ -156,6 +157,25 @@ void LongestCommonPrefix() {
     }
 }
 
+
+/**
+ 输入：1->2->4, 1->3->4
+ 输出：1->1->2->3->4->4
+ */
+void MergeTwoLists(){
+//    MergeTwoLists_21
+    NSArray * input = @[@1,@4,@5];
+    NSArray * input2 = @[@2,@3,@9];
+    NSArray * ountput = @[@1,@2,@3,@4,@5,@9];
+    ListNode * node = [ListNode nexts:input];
+    ListNode * node2 = [ListNode nexts:input2];
+    ListNode * node3 = [ListNode nexts:ountput];
+    ListNode * nodeO = [MergeTwoLists_21 mergeTwoLists:node and:node2];
+    if ([node3 isEqual:nodeO]) {
+        NSLog(@"MergeTwoLists_21 success");
+    }
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         TwoNums();
@@ -167,6 +187,7 @@ int main(int argc, const char * argv[]) {
         Palindrome();
         strStr();
         LongestCommonPrefix();
+        MergeTwoLists();
     }
     return 0;
 }
