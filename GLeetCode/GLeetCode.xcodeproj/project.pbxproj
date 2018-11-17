@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B30C05621A008570082FC3D /* LongestCommonPrefix_14.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B30C05521A008570082FC3D /* LongestCommonPrefix_14.m */; };
 		2B3C9531219BF76D00BB56F4 /* LongestSubstring_03.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C9530219BF76D00BB56F4 /* LongestSubstring_03.m */; };
 		2B3C9534219C108A00BB56F4 /* FindMedianSortedArrays_04.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C9533219C108A00BB56F4 /* FindMedianSortedArrays_04.m */; };
 		2B3C9537219C500B00BB56F4 /* LongestPalindrome_05.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C9536219C500B00BB56F4 /* LongestPalindrome_05.m */; };
@@ -32,6 +33,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B30C05421A008570082FC3D /* LongestCommonPrefix_14.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LongestCommonPrefix_14.h; sourceTree = "<group>"; };
+		2B30C05521A008570082FC3D /* LongestCommonPrefix_14.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LongestCommonPrefix_14.m; sourceTree = "<group>"; };
 		2B3C952F219BF76D00BB56F4 /* LongestSubstring_03.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LongestSubstring_03.h; sourceTree = "<group>"; };
 		2B3C9530219BF76D00BB56F4 /* LongestSubstring_03.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LongestSubstring_03.m; sourceTree = "<group>"; };
 		2B3C9532219C108A00BB56F4 /* FindMedianSortedArrays_04.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindMedianSortedArrays_04.h; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 				2B6D66A0219C80A300149FEE /* Palindrome_09.m */,
 				2BCDEDA5219DC75D00B60E64 /* strStr_28.h */,
 				2BCDEDA6219DC75D00B60E64 /* strStr_28.m */,
+				2B30C05421A008570082FC3D /* LongestCommonPrefix_14.h */,
+				2B30C05521A008570082FC3D /* LongestCommonPrefix_14.m */,
 				2B5692AD219B240C0033096D /* ListNode.h */,
 				2B5692AE219B240C0033096D /* ListNode.m */,
 			);
@@ -164,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B5692A6219B14EA0033096D /* TwoNum_01.m in Sources */,
+				2B30C05621A008570082FC3D /* LongestCommonPrefix_14.m in Sources */,
 				2BCDEDA7219DC75D00B60E64 /* strStr_28.m in Sources */,
 				2B5692AC219B1FB00033096D /* AddTwoNumbers_02.m in Sources */,
 				2B3C9534219C108A00BB56F4 /* FindMedianSortedArrays_04.m in Sources */,

@@ -67,4 +67,26 @@
     }
     return nexts.copy;
 }
+
++ (NSArray * )nexts:(NSString * )pattern
+{
+    NSUInteger length = pattern.length;
+    NSMutableArray * nexts = [NSMutableArray new];
+    nexts[0] = @(-1);
+    int t = 0;
+    for (int i =1; i<length; i++) {
+        t = [nexts[i-1] intValue];
+        if (length > t+1) {
+            while ([pattern characterAtIndex:t+1] != [pattern characterAtIndex:i] && t>0) {
+                t = [nexts[t] intValue];
+            }
+            if ([pattern characterAtIndex:t+1] == [pattern characterAtIndex:i]) {
+                nexts[i] = @(t+1);
+            } else {
+                nexts[i] = @(-1);
+            }
+        }
+    }
+    return nexts.copy;
+}
 @end

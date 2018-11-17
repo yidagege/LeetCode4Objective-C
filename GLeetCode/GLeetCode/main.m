@@ -15,6 +15,7 @@
 #import "LongestPalindrome_05.h"
 #import "Palindrome_09.h"
 #import "strStr_28.h"
+#import "LongestCommonPrefix_14.h"
 #pragma mark - Test
 /**
  01
@@ -133,7 +134,26 @@ void Palindrome(){
  */
 void strStr(){
     int loc = [strStr_28 str:@"hello" Str:@"ll"];
-    
+    if (loc == 2) {
+        NSLog(@"strStr_28 success");
+    }
+}
+
+
+/**
+ 输入: ["flower","flow","flight"]
+ 输出: "fl"
+ 示例 2:
+ 
+ 输入: ["dog","racecar","car"]
+ 输出: ""
+ 解释: 输入不存在公共前缀。
+ */
+void LongestCommonPrefix() {
+    NSString * str = [LongestCommonPrefix_14 longestCommonPrefix:@[@"flower",@"flow",@"flight"]];
+    if ([str isEqualToString:@"fl"]) {
+        NSLog(@"LongestCommonPrefix_14 success");
+    }
 }
 
 int main(int argc, const char * argv[]) {
@@ -146,6 +166,7 @@ int main(int argc, const char * argv[]) {
         ReverseNum();
         Palindrome();
         strStr();
+        LongestCommonPrefix();
     }
     return 0;
 }
