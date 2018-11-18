@@ -20,7 +20,8 @@
 #import "RemoveDuplicates_26.h"
 #import "SearchInsert_35.h"
 #import "MaxSubArray_53.h"
-
+#import "LengthOfLastWord_58.h"
+#import "PlusOne_66.h"
 #pragma mark - Test
 /**
  01
@@ -213,6 +214,20 @@ void MaxSubArray(){
     }
 }
 
+void LengthOfLastWord(){
+    int length = [LengthOfLastWord_58 lengthOfLastWord:@"hello world"];
+    if (length == 5) {
+        NSLog(@"LengthOfLastWord_58 success");
+    }
+}
+
+void PlusOne(){
+    NSArray * arr = [PlusOne_66 plusOne:@[@9,@9,@9]];
+    if ([arr isEqual:@[@1,@0,@0,@0]]) {
+        NSLog(@"PlusOne success");
+    }
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         TwoNums();
@@ -232,7 +247,8 @@ int main(int argc, const char * argv[]) {
         CFTimeInterval endTime = [[NSDate date] timeIntervalSince1970];
         CFTimeInterval consumingTime = endTime - startTime;
         NSLog(@"耗时：%@", @(consumingTime*1000));
-        
+        LengthOfLastWord();
+        PlusOne();
     }
     return 0;
 }

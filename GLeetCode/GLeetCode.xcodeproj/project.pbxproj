@@ -13,6 +13,8 @@
 		2B30C05F21A03FEB0082FC3D /* SearchInsert_35.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B30C05E21A03FEB0082FC3D /* SearchInsert_35.m */; };
 		2B30C06221A0583A0082FC3D /* MaxSubArray_53.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B30C06121A0583A0082FC3D /* MaxSubArray_53.m */; };
 		2B30C06521A05DB70082FC3D /* DivideAndConquer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B30C06421A05DB70082FC3D /* DivideAndConquer.m */; };
+		2B30C06821A135C20082FC3D /* LengthOfLastWord_58.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B30C06721A135C20082FC3D /* LengthOfLastWord_58.m */; };
+		2B30C06B21A13C4B0082FC3D /* PlusOne_66.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B30C06A21A13C4B0082FC3D /* PlusOne_66.m */; };
 		2B3C9531219BF76D00BB56F4 /* LongestSubstring_03.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C9530219BF76D00BB56F4 /* LongestSubstring_03.m */; };
 		2B3C9534219C108A00BB56F4 /* FindMedianSortedArrays_04.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C9533219C108A00BB56F4 /* FindMedianSortedArrays_04.m */; };
 		2B3C9537219C500B00BB56F4 /* LongestPalindrome_05.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C9536219C500B00BB56F4 /* LongestPalindrome_05.m */; };
@@ -50,6 +52,10 @@
 		2B30C06121A0583A0082FC3D /* MaxSubArray_53.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaxSubArray_53.m; sourceTree = "<group>"; };
 		2B30C06321A05DB70082FC3D /* DivideAndConquer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DivideAndConquer.h; sourceTree = "<group>"; };
 		2B30C06421A05DB70082FC3D /* DivideAndConquer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DivideAndConquer.m; sourceTree = "<group>"; };
+		2B30C06621A135C20082FC3D /* LengthOfLastWord_58.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LengthOfLastWord_58.h; sourceTree = "<group>"; };
+		2B30C06721A135C20082FC3D /* LengthOfLastWord_58.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LengthOfLastWord_58.m; sourceTree = "<group>"; };
+		2B30C06921A13C4B0082FC3D /* PlusOne_66.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlusOne_66.h; sourceTree = "<group>"; };
+		2B30C06A21A13C4B0082FC3D /* PlusOne_66.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlusOne_66.m; sourceTree = "<group>"; };
 		2B3C952F219BF76D00BB56F4 /* LongestSubstring_03.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LongestSubstring_03.h; sourceTree = "<group>"; };
 		2B3C9530219BF76D00BB56F4 /* LongestSubstring_03.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LongestSubstring_03.m; sourceTree = "<group>"; };
 		2B3C9532219C108A00BB56F4 /* FindMedianSortedArrays_04.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindMedianSortedArrays_04.h; sourceTree = "<group>"; };
@@ -129,6 +135,10 @@
 				2B30C05E21A03FEB0082FC3D /* SearchInsert_35.m */,
 				2B30C06021A0583A0082FC3D /* MaxSubArray_53.h */,
 				2B30C06121A0583A0082FC3D /* MaxSubArray_53.m */,
+				2B30C06621A135C20082FC3D /* LengthOfLastWord_58.h */,
+				2B30C06721A135C20082FC3D /* LengthOfLastWord_58.m */,
+				2B30C06921A13C4B0082FC3D /* PlusOne_66.h */,
+				2B30C06A21A13C4B0082FC3D /* PlusOne_66.m */,
 				2B30C06321A05DB70082FC3D /* DivideAndConquer.h */,
 				2B30C06421A05DB70082FC3D /* DivideAndConquer.m */,
 				2B5692AD219B240C0033096D /* ListNode.h */,
@@ -197,6 +207,7 @@
 				2B30C05621A008570082FC3D /* LongestCommonPrefix_14.m in Sources */,
 				2B30C06521A05DB70082FC3D /* DivideAndConquer.m in Sources */,
 				2BCDEDA7219DC75D00B60E64 /* strStr_28.m in Sources */,
+				2B30C06B21A13C4B0082FC3D /* PlusOne_66.m in Sources */,
 				2B5692AC219B1FB00033096D /* AddTwoNumbers_02.m in Sources */,
 				2B3C9534219C108A00BB56F4 /* FindMedianSortedArrays_04.m in Sources */,
 				2B56929E219B14870033096D /* main.m in Sources */,
@@ -209,6 +220,7 @@
 				2B5692A9219B1A330033096D /* ReverseNum_07.m in Sources */,
 				2B6D66A1219C80A300149FEE /* Palindrome_09.m in Sources */,
 				2B30C06221A0583A0082FC3D /* MaxSubArray_53.m in Sources */,
+				2B30C06821A135C20082FC3D /* LengthOfLastWord_58.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
