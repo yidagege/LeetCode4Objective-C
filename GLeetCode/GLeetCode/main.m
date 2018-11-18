@@ -22,6 +22,7 @@
 #import "MaxSubArray_53.h"
 #import "LengthOfLastWord_58.h"
 #import "PlusOne_66.h"
+#import "AddBinary_67.h"
 #pragma mark - Test
 /**
  01
@@ -228,6 +229,24 @@ void PlusOne(){
     }
 }
 
+/**
+ 示例 1:
+ 
+ 输入: a = "11", b = "1"
+ 输出: "100"
+ 示例 2:
+ 
+ 输入: a = "1010", b = "1011"
+ 输出: "10101"
+
+ */
+void AddBinary(){
+    NSString * retval = [AddBinary_67 addBinary:@"1010" and:@"1011"];
+    if ([retval isEqualToString:@"10101"]) {
+        NSLog(@"AddBinary_67 sucess");
+    }
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         TwoNums();
@@ -249,6 +268,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"耗时：%@", @(consumingTime*1000));
         LengthOfLastWord();
         PlusOne();
+        AddBinary();
     }
     return 0;
 }
