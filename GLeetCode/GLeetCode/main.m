@@ -23,6 +23,7 @@
 #import "LengthOfLastWord_58.h"
 #import "PlusOne_66.h"
 #import "AddBinary_67.h"
+#import "MySqrt_69.h"
 #pragma mark - Test
 /**
  01
@@ -243,10 +244,16 @@ void PlusOne(){
 void AddBinary(){
     NSString * retval = [AddBinary_67 addBinary:@"1010" and:@"1011"];
     if ([retval isEqualToString:@"10101"]) {
-        NSLog(@"AddBinary_67 sucess");
+        NSLog(@"AddBinary_67 success");
     }
 }
 
+void MySqrt(){
+    int sq = [MySqrt_69 mySqrt:8];
+    if (sq == 2) {
+        NSLog(@"mySqrt success");
+    }
+}
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         TwoNums();
@@ -269,6 +276,7 @@ int main(int argc, const char * argv[]) {
         LengthOfLastWord();
         PlusOne();
         AddBinary();
+        MySqrt();
     }
     return 0;
 }
