@@ -26,6 +26,8 @@
 		2B5692AC219B1FB00033096D /* AddTwoNumbers_02.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5692AB219B1FB00033096D /* AddTwoNumbers_02.m */; };
 		2B5692AF219B240C0033096D /* ListNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5692AE219B240C0033096D /* ListNode.m */; };
 		2B6D66A1219C80A300149FEE /* Palindrome_09.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D66A0219C80A300149FEE /* Palindrome_09.m */; };
+		2B936AF521A2E5A800C2B9D6 /* ClimbStairs_70.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B936AF421A2E5A800C2B9D6 /* ClimbStairs_70.m */; };
+		2B936AF821A2E7B600C2B9D6 /* DeleteDuplicates_83.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B936AF721A2E7B600C2B9D6 /* DeleteDuplicates_83.m */; };
 		2BCDEDA7219DC75D00B60E64 /* strStr_28.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDEDA6219DC75D00B60E64 /* strStr_28.m */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,10 @@
 		2B5692AE219B240C0033096D /* ListNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListNode.m; sourceTree = "<group>"; };
 		2B6D669F219C80A300149FEE /* Palindrome_09.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Palindrome_09.h; sourceTree = "<group>"; };
 		2B6D66A0219C80A300149FEE /* Palindrome_09.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Palindrome_09.m; sourceTree = "<group>"; };
+		2B936AF321A2E5A800C2B9D6 /* ClimbStairs_70.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClimbStairs_70.h; sourceTree = "<group>"; };
+		2B936AF421A2E5A800C2B9D6 /* ClimbStairs_70.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClimbStairs_70.m; sourceTree = "<group>"; };
+		2B936AF621A2E7B600C2B9D6 /* DeleteDuplicates_83.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeleteDuplicates_83.h; sourceTree = "<group>"; };
+		2B936AF721A2E7B600C2B9D6 /* DeleteDuplicates_83.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeleteDuplicates_83.m; sourceTree = "<group>"; };
 		2BCDEDA5219DC75D00B60E64 /* strStr_28.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strStr_28.h; sourceTree = "<group>"; };
 		2BCDEDA6219DC75D00B60E64 /* strStr_28.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = strStr_28.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +155,10 @@
 				2B30C06D21A141ED0082FC3D /* AddBinary_67.m */,
 				2B30C06F21A194840082FC3D /* MySqrt_69.h */,
 				2B30C07021A194840082FC3D /* MySqrt_69.m */,
+				2B936AF321A2E5A800C2B9D6 /* ClimbStairs_70.h */,
+				2B936AF421A2E5A800C2B9D6 /* ClimbStairs_70.m */,
+				2B936AF621A2E7B600C2B9D6 /* DeleteDuplicates_83.h */,
+				2B936AF721A2E7B600C2B9D6 /* DeleteDuplicates_83.m */,
 				2B30C06321A05DB70082FC3D /* DivideAndConquer.h */,
 				2B30C06421A05DB70082FC3D /* DivideAndConquer.m */,
 				2B5692AD219B240C0033096D /* ListNode.h */,
@@ -222,8 +232,10 @@
 				2B3C9534219C108A00BB56F4 /* FindMedianSortedArrays_04.m in Sources */,
 				2B56929E219B14870033096D /* main.m in Sources */,
 				2B30C05C21A0324E0082FC3D /* RemoveDuplicates_26.m in Sources */,
+				2B936AF821A2E7B600C2B9D6 /* DeleteDuplicates_83.m in Sources */,
 				2B3C9537219C500B00BB56F4 /* LongestPalindrome_05.m in Sources */,
 				2B3C9531219BF76D00BB56F4 /* LongestSubstring_03.m in Sources */,
+				2B936AF521A2E5A800C2B9D6 /* ClimbStairs_70.m in Sources */,
 				2B30C05921A0150D0082FC3D /* MergeTwoLists_21.m in Sources */,
 				2B30C07121A194840082FC3D /* MySqrt_69.m in Sources */,
 				2B30C05F21A03FEB0082FC3D /* SearchInsert_35.m in Sources */,
@@ -354,7 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RCF9CM736N;
+				DEVELOPMENT_TEAM = LSND274XQ9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -363,7 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RCF9CM736N;
+				DEVELOPMENT_TEAM = LSND274XQ9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

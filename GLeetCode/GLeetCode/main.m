@@ -24,6 +24,8 @@
 #import "PlusOne_66.h"
 #import "AddBinary_67.h"
 #import "MySqrt_69.h"
+#import "ClimbStairs_70.h"
+#import "DeleteDuplicates_83.h"
 #pragma mark - Test
 /**
  01
@@ -254,6 +256,23 @@ void MySqrt(){
         NSLog(@"mySqrt success");
     }
 }
+
+void ClimbStairs(){
+    int n = [ClimbStairs_70 climbStairs:4];
+    if (n == 5) {
+        NSLog(@"ClimbStairs_70 success");
+    }
+}
+
+void DeleteDuplicates() {
+    ListNode * input = [ListNode nexts:@[@1,@1,@2,@3,@3]];
+    ListNode * test = [ListNode nexts:@[@1,@2,@3]];
+    ListNode * output = [DeleteDuplicates_83 deleteDuplicates:input];
+    if ([test isEqual:output]) {
+        NSLog(@"DeleteDuplicates_83 success");
+    }
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         TwoNums();
@@ -277,6 +296,8 @@ int main(int argc, const char * argv[]) {
         PlusOne();
         AddBinary();
         MySqrt();
+        ClimbStairs();
+        DeleteDuplicates();
     }
     return 0;
 }
