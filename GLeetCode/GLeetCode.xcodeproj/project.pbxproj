@@ -28,6 +28,7 @@
 		2B6D66A1219C80A300149FEE /* Palindrome_09.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D66A0219C80A300149FEE /* Palindrome_09.m */; };
 		2B936AF521A2E5A800C2B9D6 /* ClimbStairs_70.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B936AF421A2E5A800C2B9D6 /* ClimbStairs_70.m */; };
 		2B936AF821A2E7B600C2B9D6 /* DeleteDuplicates_83.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B936AF721A2E7B600C2B9D6 /* DeleteDuplicates_83.m */; };
+		2B936AFB21A2E9D600C2B9D6 /* MergeTwoArray_88.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B936AFA21A2E9D600C2B9D6 /* MergeTwoArray_88.m */; };
 		2BCDEDA7219DC75D00B60E64 /* strStr_28.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDEDA6219DC75D00B60E64 /* strStr_28.m */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,8 @@
 		2B936AF421A2E5A800C2B9D6 /* ClimbStairs_70.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClimbStairs_70.m; sourceTree = "<group>"; };
 		2B936AF621A2E7B600C2B9D6 /* DeleteDuplicates_83.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeleteDuplicates_83.h; sourceTree = "<group>"; };
 		2B936AF721A2E7B600C2B9D6 /* DeleteDuplicates_83.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeleteDuplicates_83.m; sourceTree = "<group>"; };
+		2B936AF921A2E9D600C2B9D6 /* MergeTwoArray_88.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MergeTwoArray_88.h; sourceTree = "<group>"; };
+		2B936AFA21A2E9D600C2B9D6 /* MergeTwoArray_88.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MergeTwoArray_88.m; sourceTree = "<group>"; };
 		2BCDEDA5219DC75D00B60E64 /* strStr_28.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strStr_28.h; sourceTree = "<group>"; };
 		2BCDEDA6219DC75D00B60E64 /* strStr_28.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = strStr_28.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +162,8 @@
 				2B936AF421A2E5A800C2B9D6 /* ClimbStairs_70.m */,
 				2B936AF621A2E7B600C2B9D6 /* DeleteDuplicates_83.h */,
 				2B936AF721A2E7B600C2B9D6 /* DeleteDuplicates_83.m */,
+				2B936AF921A2E9D600C2B9D6 /* MergeTwoArray_88.h */,
+				2B936AFA21A2E9D600C2B9D6 /* MergeTwoArray_88.m */,
 				2B30C06321A05DB70082FC3D /* DivideAndConquer.h */,
 				2B30C06421A05DB70082FC3D /* DivideAndConquer.m */,
 				2B5692AD219B240C0033096D /* ListNode.h */,
@@ -232,6 +237,7 @@
 				2B3C9534219C108A00BB56F4 /* FindMedianSortedArrays_04.m in Sources */,
 				2B56929E219B14870033096D /* main.m in Sources */,
 				2B30C05C21A0324E0082FC3D /* RemoveDuplicates_26.m in Sources */,
+				2B936AFB21A2E9D600C2B9D6 /* MergeTwoArray_88.m in Sources */,
 				2B936AF821A2E7B600C2B9D6 /* DeleteDuplicates_83.m in Sources */,
 				2B3C9537219C500B00BB56F4 /* LongestPalindrome_05.m in Sources */,
 				2B3C9531219BF76D00BB56F4 /* LongestSubstring_03.m in Sources */,

@@ -26,6 +26,7 @@
 #import "MySqrt_69.h"
 #import "ClimbStairs_70.h"
 #import "DeleteDuplicates_83.h"
+#import "MergeTwoArray_88.h"
 #pragma mark - Test
 /**
  01
@@ -273,6 +274,22 @@ void DeleteDuplicates() {
     }
 }
 
+/**
+ 输入:
+ nums1 = [1,2,3,0,0,0], m = 3
+ nums2 = [2,5,6],       n = 3
+ 
+ 输出: [1,2,2,3,5,6]
+ */
+void MergeTwoArray(){
+    NSMutableArray *array1 = @[@1,@2,@3].mutableCopy; //,@0,@0,@0
+    NSArray * array2 = @[@2,@5,@6];
+    [MergeTwoArray_88 mergeTwoArray:array1 and:array2];
+    if ([array1.copy isEqualTo:@[@1,@2,@2,@3,@5,@6]]) {
+        NSLog(@"MergeTwoArray_88 successs");
+    }
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         TwoNums();
@@ -298,6 +315,7 @@ int main(int argc, const char * argv[]) {
         MySqrt();
         ClimbStairs();
         DeleteDuplicates();
+        MergeTwoArray();
     }
     return 0;
 }
