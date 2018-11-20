@@ -9,11 +9,18 @@
 #import "MergeTwoArray_88.h"
 
 @implementation MergeTwoArray_88
-
+/**
+ 给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
+ 
+ 说明:
+ 
+ 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。
+ 你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。
+ */
 + (void)mergeTwoArray:(NSMutableArray*)arr1 and:(NSArray*)arr2
 {
     int index1 = (int)arr1.count-1;
-    int temp = arr1.count;
+    int temp = (int)arr1.count;
     int index2 = (int)arr2.count-1;
     int indexN = (int)arr1.count+(int)arr2.count-1;
     while (index1 >= 0 && index2 >= 0) {
