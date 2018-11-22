@@ -33,6 +33,8 @@
 		2B936B0121A42B5F00C2B9D6 /* TreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B936B0021A42B5F00C2B9D6 /* TreeNode.m */; };
 		2BCDEDA7219DC75D00B60E64 /* strStr_28.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDEDA6219DC75D00B60E64 /* strStr_28.m */; };
 		2BF27A5721A6F34900B628B2 /* MaxDepth_104.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF27A5621A6F34900B628B2 /* MaxDepth_104.m */; };
+		2BF27A5A21A7088200B628B2 /* LevelOrderBottom_107.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF27A5921A7088200B628B2 /* LevelOrderBottom_107.m */; };
+		2BF27A5D21A70E2300B628B2 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF27A5C21A70E2300B628B2 /* Stack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,6 +102,10 @@
 		2BCDEDA6219DC75D00B60E64 /* strStr_28.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = strStr_28.m; sourceTree = "<group>"; };
 		2BF27A5521A6F34900B628B2 /* MaxDepth_104.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaxDepth_104.h; sourceTree = "<group>"; };
 		2BF27A5621A6F34900B628B2 /* MaxDepth_104.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaxDepth_104.m; sourceTree = "<group>"; };
+		2BF27A5821A7088200B628B2 /* LevelOrderBottom_107.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelOrderBottom_107.h; sourceTree = "<group>"; };
+		2BF27A5921A7088200B628B2 /* LevelOrderBottom_107.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LevelOrderBottom_107.m; sourceTree = "<group>"; };
+		2BF27A5B21A70E2300B628B2 /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		2BF27A5C21A70E2300B628B2 /* Stack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,12 +183,16 @@
 				2B936AFD21A42AC300C2B9D6 /* IsSameTree_100.m */,
 				2BF27A5521A6F34900B628B2 /* MaxDepth_104.h */,
 				2BF27A5621A6F34900B628B2 /* MaxDepth_104.m */,
+				2BF27A5821A7088200B628B2 /* LevelOrderBottom_107.h */,
+				2BF27A5921A7088200B628B2 /* LevelOrderBottom_107.m */,
 				2B30C06321A05DB70082FC3D /* DivideAndConquer.h */,
 				2B30C06421A05DB70082FC3D /* DivideAndConquer.m */,
 				2B5692AD219B240C0033096D /* ListNode.h */,
 				2B5692AE219B240C0033096D /* ListNode.m */,
 				2B936AFF21A42B5F00C2B9D6 /* TreeNode.h */,
 				2B936B0021A42B5F00C2B9D6 /* TreeNode.m */,
+				2BF27A5B21A70E2300B628B2 /* Stack.h */,
+				2BF27A5C21A70E2300B628B2 /* Stack.m */,
 			);
 			path = GLeetCode;
 			sourceTree = "<group>";
@@ -245,11 +255,13 @@
 			files = (
 				2B5692A6219B14EA0033096D /* TwoNum_01.m in Sources */,
 				2B30C05621A008570082FC3D /* LongestCommonPrefix_14.m in Sources */,
+				2BF27A5A21A7088200B628B2 /* LevelOrderBottom_107.m in Sources */,
 				2B30C06521A05DB70082FC3D /* DivideAndConquer.m in Sources */,
 				2BCDEDA7219DC75D00B60E64 /* strStr_28.m in Sources */,
 				2B30C06B21A13C4B0082FC3D /* PlusOne_66.m in Sources */,
 				2B936B0121A42B5F00C2B9D6 /* TreeNode.m in Sources */,
 				2B5692AC219B1FB00033096D /* AddTwoNumbers_02.m in Sources */,
+				2BF27A5D21A70E2300B628B2 /* Stack.m in Sources */,
 				2B3C9534219C108A00BB56F4 /* FindMedianSortedArrays_04.m in Sources */,
 				2B56929E219B14870033096D /* main.m in Sources */,
 				2B30C05C21A0324E0082FC3D /* RemoveDuplicates_26.m in Sources */,

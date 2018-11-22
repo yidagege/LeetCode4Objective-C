@@ -36,6 +36,11 @@ NS_ASSUME_NONNULL_BEGIN
  4  5  6
  */
 + (instancetype)createNodeTree:(NSArray *)array;
+
++ (void)preOrder:(TreeNode *)node;
++ (void)inOrder:(TreeNode *)node;
++ (void)postOrder:(TreeNode *)node;
+
 @end
 
 NS_ASSUME_NONNULL_END

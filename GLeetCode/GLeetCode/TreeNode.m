@@ -27,6 +27,29 @@
  / \
  2 3
  */
+/*
+ 思路:
+ 数组下标的范围是0到n-1,而在树中编号是从1开始的，下标的范围是1到n;
+ 
+ 　　根据二叉树的性质（将一个完全二叉树按照从上到下，从左到右进行编号，其编号为i的节点，如果满足2*i<=n,则说明编号为i的节点有左孩子，否则没有，如果满足2*i+1<=n,则说明编号为i的节点有右孩子，否则没有）可知
+ 
+ 2*i<=n
+ 
+ 2*i+1<=n
+ 
+ 该性质是对树的编号（1~n）成立的，而数组的下标是从0到n-1，将对应下标都减1可知，对于数组0~n-1来说，
+ 
+ 2*i-1<=n-1
+ 
+ 2*i<=n-1是成立的。
+ 
+ 　　进一步来看一下得到的两个新规律是否能直接用，对于2*i-1<=n-1 来说，当i=0时 ，2*i-1=-1，而2*i-1对应的是什么呢？是编号i的节点的左孩子的编号，显然没有编号为-1的节点，那我们试一试将2*i-1+1呢，当i=0时 ，2*i-1=0，编号为0的节点对应的左孩子显然不能是本身，于是在此基础上再加一，得到结论：
+ 
+ 2*i-1+2=2*i+1<=n-1
+ 
+ 2*i+2=2*i+2<=n-1
+ */
+
 + (instancetype)createNodeTree:(NSArray *)array
 {
     if (array.count<=0) {
@@ -60,26 +83,57 @@
     }
     return treesM.firstObject;
 }
-/*
- 思路:
- 数组下标的范围是0到n-1,而在树中编号是从1开始的，下标的范围是1到n;
+
+
+/**
+ 前序遍历的递推公式：
+ preOrder(r) = print r->preOrder(r->left)->preOrder(r->right)
  
- 　　根据二叉树的性质（将一个完全二叉树按照从上到下，从左到右进行编号，其编号为i的节点，如果满足2*i<=n,则说明编号为i的节点有左孩子，否则没有，如果满足2*i+1<=n,则说明编号为i的节点有右孩子，否则没有）可知
+ 中序遍历的递推公式：
+ inOrder(r) = inOrder(r->left)->print r->inOrder(r->right)
  
- 2*i<=n
- 
- 2*i+1<=n
- 
- 该性质是对树的编号（1~n）成立的，而数组的下标是从0到n-1，将对应下标都减1可知，对于数组0~n-1来说，
- 
- 2*i-1<=n-1
- 
- 2*i<=n-1是成立的。
- 
- 　　进一步来看一下得到的两个新规律是否能直接用，对于2*i-1<=n-1 来说，当i=0时 ，2*i-1=-1，而2*i-1对应的是什么呢？是编号i的节点的左孩子的编号，显然没有编号为-1的节点，那我们试一试将2*i-1+1呢，当i=0时 ，2*i-1=0，编号为0的节点对应的左孩子显然不能是本身，于是在此基础上再加一，得到结论：
- 
- 2*i-1+2=2*i+1<=n-1
- 
- 2*i+2=2*i+2<=n-1
+ 后序遍历的递推公式：
+ postOrder(r) = postOrder(r->left)->postOrder(r->right)->print r
  */
+
+/**
+ 前序遍历
+ */
++ (void)preOrder:(TreeNode *)node
+{
+    if (!node) {
+        return;
+    }
+    int val = node.val;
+    [TreeNode preOrder:node.left];
+    [TreeNode preOrder:node.right];
+    NSLog(@"preOrder--%ld",val);
+    return;
+}
+
++ (void)inOrder:(TreeNode *)node
+{
+    if (!node) {
+        return;
+    }
+    
+    [TreeNode preOrder:node.left];
+    int val = node.val;
+    [TreeNode preOrder:node.right];
+    NSLog(@"inOrder--%ld",val);
+    return;
+}
++ (void)postOrder:(TreeNode *)node
+{
+    if (!node) {
+        return;
+    }
+    
+    [TreeNode preOrder:node.left];
+    [TreeNode preOrder:node.right];
+    int val = node.val;
+    NSLog(@"postOrder--%ld",val);
+    return;
+}
+
 @end
