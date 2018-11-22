@@ -27,6 +27,9 @@
 #import "ClimbStairs_70.h"
 #import "DeleteDuplicates_83.h"
 #import "MergeTwoArray_88.h"
+#import "TreeNode.h"
+#import "IsSameTree_100.h"
+#import "MaxDepth_104.h"
 #pragma mark - Test
 /**
  01
@@ -41,6 +44,8 @@ void TwoNums() {
     NSArray * testValue = [TwoNum_01 twoNums:nums target:target];
     if (testValue && [testValue isEqualToArray:@[@(0),@(1)]]) {
         NSLog(@"01--TwoNums_01 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -57,6 +62,8 @@ void addTwoNums(){
     ListNode * retval = [AddTwoNumbers_02 addTwoNums:l1 and:l2];
     if ([test isEqual:retval]) {
         NSLog(@"02--addTwoNums_02 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -70,6 +77,8 @@ void LongestSubstring(){
     NSUInteger retval = [LongestSubstring_03 lengthOfLongestSubstring:@"pwwkew"];
     if (retval == 3) {
         NSLog(@"03--LongestSubstring_03 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -87,6 +96,8 @@ void FindMedianSortedArrays(){
     float temp = [FindMedianSortedArrays_04 findTopK:4 sortedArrays:A and:B];
     if (lo == 5) {
         NSLog(@"04-- FindMedianSortedArrays_04 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -112,6 +123,8 @@ void ReverseNum(){
     int retval = [ReverseNum_07 reverseNum:-123];
     if (retval == -321) {
         NSLog(@"ReverseNum_07 success");
+    } else {
+        assert(false);
     }
 }
 /**
@@ -132,6 +145,8 @@ void Palindrome(){
     BOOL tf = [Palindrome_09 isPalindrome:121121];
     if (tf) {
         NSLog(@"Palindrome_09 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -147,6 +162,8 @@ void strStr(){
     int loc = [strStr_28 str:@"hello" Str:@"ll"];
     if (loc == 2) {
         NSLog(@"strStr_28 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -164,6 +181,8 @@ void LongestCommonPrefix() {
     NSString * str = [LongestCommonPrefix_14 longestCommonPrefix:@[@"flower",@"flow",@"flight"]];
     if ([str isEqualToString:@"fl"]) {
         NSLog(@"LongestCommonPrefix_14 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -183,6 +202,8 @@ void MergeTwoLists(){
     ListNode * nodeO = [MergeTwoLists_21 mergeTwoLists:node and:node2];
     if ([node3 isEqual:nodeO]) {
         NSLog(@"MergeTwoLists_21 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -192,6 +213,8 @@ void RemoveDuplicates(){
     int count = [RemoveDuplicates_26 removeDuplicates:arrayM];
     if(count == 5) {
         NSLog(@"RemoveDuplicates_26 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -204,6 +227,8 @@ void SearchInsert(){
     int loc = [SearchInsert_35 searchInsert:@[@1,@3,@5,@6] target:5];
     if(loc == 2){
         NSLog(@"SearchInsert_35 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -216,6 +241,8 @@ void MaxSubArray(){
     int retval = [MaxSubArray_53 maxSubArray:@[@-2,@1,@-3,@4,@-1,@2,@1,@-5,@4]];
     if (retval == 6) {
         NSLog(@"MaxSubArray_53 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -223,6 +250,8 @@ void LengthOfLastWord(){
     int length = [LengthOfLastWord_58 lengthOfLastWord:@"hello world"];
     if (length == 5) {
         NSLog(@"LengthOfLastWord_58 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -230,6 +259,8 @@ void PlusOne(){
     NSArray * arr = [PlusOne_66 plusOne:@[@9,@9,@9]];
     if ([arr isEqual:@[@1,@0,@0,@0]]) {
         NSLog(@"PlusOne success");
+    } else {
+        assert(false);
     }
 }
 
@@ -248,6 +279,8 @@ void AddBinary(){
     NSString * retval = [AddBinary_67 addBinary:@"1010" and:@"1011"];
     if ([retval isEqualToString:@"10101"]) {
         NSLog(@"AddBinary_67 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -255,6 +288,8 @@ void MySqrt(){
     int sq = [MySqrt_69 mySqrt:8];
     if (sq == 2) {
         NSLog(@"mySqrt success");
+    } else {
+        assert(false);
     }
 }
 
@@ -262,6 +297,8 @@ void ClimbStairs(){
     int n = [ClimbStairs_70 climbStairs:4];
     if (n == 5) {
         NSLog(@"ClimbStairs_70 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -271,6 +308,8 @@ void DeleteDuplicates() {
     ListNode * output = [DeleteDuplicates_83 deleteDuplicates:input];
     if ([test isEqual:output]) {
         NSLog(@"DeleteDuplicates_83 success");
+    } else {
+        assert(false);
     }
 }
 
@@ -287,6 +326,40 @@ void MergeTwoArray(){
     [MergeTwoArray_88 mergeTwoArray:array1 and:array2];
     if ([array1.copy isEqualTo:@[@1,@2,@2,@3,@5,@6]]) {
         NSLog(@"MergeTwoArray_88 successs");
+    } else {
+//        assert(false);
+    }
+}
+
+void IsSameTree(){
+    NSArray * array = @[@1,@2,@3,@4,@5];
+    TreeNode * node = [TreeNode createNodeTree:array];
+    TreeNode * node1 = [TreeNode createNodeTree:array];
+    BOOL tf = [IsSameTree_100 isSameTree:node and:node1];
+    if (tf) {
+        NSLog(@"IsSameTree_100 success");
+    } else {
+        assert(false);
+    }
+}
+
+/**
+ 示例：
+ 给定二叉树 [3,9,20,null,null,15,7]，
+ 
+ 3
+ / \
+ 9  20
+ /  \
+ 15   7
+ 返回它的最大深度 3 。
+ */
+void maxDepth(){
+    NSArray * tree = @[@3,@9,@20,@-1,@-1,@15,@7];
+    
+    int depth = [MaxDepth_104 maxDepth:[TreeNode createNodeTree:tree]];
+    if (depth != 3) {
+        assert(false);
     }
 }
 
@@ -316,6 +389,8 @@ int main(int argc, const char * argv[]) {
         ClimbStairs();
         DeleteDuplicates();
         MergeTwoArray();
+        IsSameTree();
+        maxDepth();
     }
     return 0;
 }

@@ -26,8 +26,16 @@ NS_ASSUME_NONNULL_BEGIN
   1
  / \
  2 3
+ @param array [1,2,3,4,-1,5,6]
+ -1表示空节点
+ @return
+ 1
+ / \
+ 2 3
+ /  / \
+ 4  5  6
  */
-+ (instancetype)nexts:(NSArray *)array;
++ (instancetype)createNodeTree:(NSArray *)array;
 @end
 
 NS_ASSUME_NONNULL_END
