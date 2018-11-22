@@ -35,6 +35,7 @@
 		2BF27A5721A6F34900B628B2 /* MaxDepth_104.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF27A5621A6F34900B628B2 /* MaxDepth_104.m */; };
 		2BF27A5A21A7088200B628B2 /* LevelOrderBottom_107.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF27A5921A7088200B628B2 /* LevelOrderBottom_107.m */; };
 		2BF27A5D21A70E2300B628B2 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF27A5C21A70E2300B628B2 /* Stack.m */; };
+		2BF27A6021A7107400B628B2 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF27A5F21A7107400B628B2 /* Queue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,6 +107,8 @@
 		2BF27A5921A7088200B628B2 /* LevelOrderBottom_107.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LevelOrderBottom_107.m; sourceTree = "<group>"; };
 		2BF27A5B21A70E2300B628B2 /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		2BF27A5C21A70E2300B628B2 /* Stack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		2BF27A5E21A7107400B628B2 /* Queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		2BF27A5F21A7107400B628B2 /* Queue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,8 @@
 				2B936B0021A42B5F00C2B9D6 /* TreeNode.m */,
 				2BF27A5B21A70E2300B628B2 /* Stack.h */,
 				2BF27A5C21A70E2300B628B2 /* Stack.m */,
+				2BF27A5E21A7107400B628B2 /* Queue.h */,
+				2BF27A5F21A7107400B628B2 /* Queue.m */,
 			);
 			path = GLeetCode;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				2BCDEDA7219DC75D00B60E64 /* strStr_28.m in Sources */,
 				2B30C06B21A13C4B0082FC3D /* PlusOne_66.m in Sources */,
 				2B936B0121A42B5F00C2B9D6 /* TreeNode.m in Sources */,
+				2BF27A6021A7107400B628B2 /* Queue.m in Sources */,
 				2B5692AC219B1FB00033096D /* AddTwoNumbers_02.m in Sources */,
 				2BF27A5D21A70E2300B628B2 /* Stack.m in Sources */,
 				2B3C9534219C108A00BB56F4 /* FindMedianSortedArrays_04.m in Sources */,
