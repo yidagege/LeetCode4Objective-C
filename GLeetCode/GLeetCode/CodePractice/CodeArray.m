@@ -26,6 +26,25 @@
  ]
  */
 
+
+/**
+1.将数组排序
+2.定义三个指针，i，j，k。遍历i，
+ 那么这个问题就可以转化为在i之后的数组中寻找nums[j]+nums[k]=-nums[i]这个问题，
+ 也就将三数之和问题转变为二数之和---（可以使用双指针）
+ */
++(NSArray * )addNumbers:(NSArray*)nums
+{
+    if ([nums[0] intValue] >0) {
+        return nil;
+    }
+    NSMutableDictionary * diffMap = [NSMutableDictionary dictionary];
+    for (int i =0; i<nums.count; i++) {
+        
+    }
+    return nil;
+}
+
 /**
  2,岛屿的最大面积
  给定一个包含了一些 0 和 1的非空二维数组 grid , 一个 岛屿 是由四个方向 (水平或垂直) 的 1 (代表土地) 构成的组合。你可以假设二维矩阵的四个边缘都被水包围着。
