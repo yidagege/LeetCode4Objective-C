@@ -32,6 +32,7 @@
 2.定义三个指针，i，j，k。遍历i，
  那么这个问题就可以转化为在i之后的数组中寻找nums[j]+nums[k]=-nums[i]这个问题，
  也就将三数之和问题转变为二数之和---（可以使用双指针）
+ https://www.jianshu.com/p/69b0a1170f96
  */
 +(NSArray * )addNumbers:(NSArray*)nums
 {
