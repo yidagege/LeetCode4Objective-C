@@ -21,6 +21,15 @@
     return self;
 }
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        _capacity = NSUIntegerMax;
+        _arr = [NSMutableArray new];
+    }
+    return self;
+}
+
 - (BOOL)isEmpty {
     return _arr.count == 0;
 }

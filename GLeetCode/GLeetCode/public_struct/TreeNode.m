@@ -7,7 +7,7 @@
 //
 
 #import "TreeNode.h"
-
+#import "Stack.h"
 @implementation TreeNode
 
 + (instancetype)val:(int)val
@@ -98,17 +98,43 @@
 
 /**
  前序遍历
+ 递归
  */
-+ (void)preOrder:(TreeNode *)node
++ (void)preOrderTraverse:(TreeNode *)node
 {
     if (!node) {
         return;
     }
     int val = node.val;
-    [TreeNode preOrder:node.left];
-    [TreeNode preOrder:node.right];
-    NSLog(@"preOrder--%ld",val);
-    return;
+    [TreeNode preOrderTraverse:node.left];
+    [TreeNode preOrderTraverse:node.right];
+    NSLog(@"preOrder:%d",val);
+}
+
+/**
+ 前序遍历
+ 非递归
+ 依据前序遍历的顺序，优先訪问根结点。然后在訪问左子树和右子树。所以。对于随意结点node。第一部分即直接訪问之，之后在推断左子树是否为空，不为空时即反复上面的步骤，直到其为空。若为空。则须要訪问右子树。注意。在訪问过左孩子之后。须要反过来訪问其右孩子。所以，须要栈这样的数据结构的支持。对于随意一个结点node，详细过程例如以下：
+ 
+ a)訪问之，并把结点node入栈。当前结点置为左孩子；
+ 
+ b)推断结点node是否为空，若为空。则取出栈顶结点并出栈，将右孩子置为当前结点；否则反复a)步直到当前结点为空或者栈为空（能够发现栈中的结点就是为了訪问右孩子才存储的）
+
+ */
++ (void)preOrder:(TreeNode *)node
+{
+    Stack * stack = [Stack new];
+    TreeNode *p = node;
+    while (p || !stack.isEmpty) {
+        if (p) {
+            NSLog(@"preOrder:%d",p.val);
+            [stack push:p];
+            p = p.left;
+        } else {
+            TreeNode *node = stack.pop;
+            p = node.right;
+        }
+    }
 }
 
 + (void)inOrder:(TreeNode *)node
@@ -117,23 +143,22 @@
         return;
     }
     
-    [TreeNode preOrder:node.left];
+    [TreeNode inOrder:node.left];
     int val = node.val;
-    [TreeNode preOrder:node.right];
-    NSLog(@"inOrder--%ld",val);
-    return;
+    NSLog(@"inOrder: %d",val);
+    [TreeNode inOrder:node.right];
+  
 }
+
 + (void)postOrder:(TreeNode *)node
 {
-    if (!node) {
+    if (node) {
         return;
     }
-    
-    [TreeNode preOrder:node.left];
-    [TreeNode preOrder:node.right];
+    [TreeNode postOrder:node.left];
+    [TreeNode postOrder:node.right];
     int val = node.val;
-    NSLog(@"postOrder--%ld",val);
-    return;
+    NSLog(@"postOrder: %d",val);
 }
 
 @end

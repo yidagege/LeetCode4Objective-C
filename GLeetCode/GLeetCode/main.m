@@ -30,6 +30,8 @@
 #import "TreeNode.h"
 #import "IsSameTree_100.h"
 #import "MaxDepth_104.h"
+#import "LevelOrderBottom_107.h"
+#import "SortedArrayToBST_108.h"
 #pragma mark - Test
 /**
  01
@@ -363,6 +365,39 @@ void maxDepth(){
     }
 }
 
+
+/**
+ 给定二叉树 [3,9,20,-1,-1,15,7],
+ 
+ 3
+ / \
+ 9  20
+ /  \
+ 15   7
+ 返回其自底向上的层次遍历为：
+ 
+ [
+ [15,7],
+ [9,20],
+ [3]
+ ]
+ */
+void LevelOrderBottom() {
+    TreeNode * node = [TreeNode createNodeTree:@[@3,@9,@20,@-1,@-1,@15,@7]];
+    NSArray * arrayBottom = [LevelOrderBottom_107 levelOrderBottom:node];
+    NSLog(@"%@",arrayBottom);
+    NSArray * arrayTop = [LevelOrderBottom_107 levelOrderTop:node];
+    NSLog(@"%@",arrayTop);
+}
+
+void SortedArrayToBST(){
+    TreeNode * temp = [SortedArrayToBST_108 sortedArrayToBST:@[@-10,@-3,@0,@5,@9]];
+    [TreeNode inOrder:temp];
+//    [TreeNode preOrder:temp];
+//    [TreeNode postOrder:temp];
+    NSLog(@"SortedArrayToBST success");
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         TwoNums();
@@ -391,6 +426,8 @@ int main(int argc, const char * argv[]) {
         MergeTwoArray();
         IsSameTree();
         maxDepth();
+        LevelOrderBottom();
+        SortedArrayToBST();
     }
     return 0;
 }

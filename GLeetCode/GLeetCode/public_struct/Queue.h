@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Queue : NSObject
 - (void)push:(id)object;
-- (id)pop;
+- (__kindof id)pop;
 - (BOOL)isEmpty;
 - (void)clean;
 @end

@@ -40,6 +40,7 @@
  
  3.重复以上操作直到队列为空
  
+ 
  */
 +(NSArray *)levelOrderBottom:(TreeNode *)node
 {
@@ -50,42 +51,47 @@
     }
     Queue * queue = [Queue new];
     [queue push:node];
-    while (![queue isEmpty]) {
-//        NSMutableArray *
+    while (!queue.isEmpty) {
+        TreeNode * temp = queue.pop;
+        NSLog(@"%d",temp.val);
+        if (temp.left) {
+            [queue push:temp.left];
+        }
+        if (temp.right) {
+            [queue push:temp.right];
+        }
     }
     return nil;
 }
 
++ (NSArray *)levelOrderTop:(TreeNode *)node
+{
+    NSMutableArray * retval = [NSMutableArray new];
+    if (node) {
+        NSMutableArray * temp = [NSMutableArray array];
+        [temp addObject:@(node.val)];
+        [retval addObject:temp];
+        [LevelOrderBottom_107 traverse:retval treeNode:node.left level:1];
+        [LevelOrderBottom_107 traverse:retval treeNode:node.right level:1];
+    }
+    return retval.copy;
+}
 
-/**
- queue<TreeNode*> que;
- que.push(root);
- vector<vector<int>> re;
- if(root==NULL) return re;
- 
- while(!que.empty())
- {
- vector<int> a;
- queue<TreeNode*> next;
- while(!que.empty())
- {
- TreeNode* tre = que.front() ;
- a.push_back(tre->val);
- que.pop();
- if(tre->left) next.push(tre->left);
- if(tre->right) next.push(tre->right);
- 
- }
- re.push_back(a);
- que=next;
- 
- }
- return re;
- 
- ---------------------
- 作者：我是小x
- 来源：CSDN
- 原文：https://blog.csdn.net/qq_31442743/article/details/81118131
- 版权声明：本文为博主原创文章，转载请附上博文链接！
- */
++ (void)traverse:(NSMutableArray *)array treeNode:(TreeNode*)node level:(int)level
+{
+    NSMutableArray *temp = nil;
+    if (node) {
+        if (array.count == level) {
+            temp = [NSMutableArray array];
+            [array addObject:temp];
+        } else {
+            temp = array[level];
+        }
+        [temp addObject:@(node.val)];
+        [LevelOrderBottom_107 traverse:array treeNode:node.left level:level+1];
+        [LevelOrderBottom_107 traverse:array treeNode:node.right level:level+1];
+    }
+}
+
+
 @end

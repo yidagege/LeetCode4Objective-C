@@ -33,6 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 +(NSArray *)levelOrderBottom:(TreeNode *)node;
 
+/**
+ 返回自上朝下的广度优先遍历
+ */
++ (NSArray *)levelOrderTop:(TreeNode *)node;
 @end
 
 NS_ASSUME_NONNULL_END
