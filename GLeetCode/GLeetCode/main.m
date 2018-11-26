@@ -32,6 +32,7 @@
 #import "MaxDepth_104.h"
 #import "LevelOrderBottom_107.h"
 #import "SortedArrayToBST_108.h"
+#import "MinDepth_111.h"
 #pragma mark - Test
 /**
  01
@@ -398,6 +399,13 @@ void SortedArrayToBST(){
     NSLog(@"SortedArrayToBST success");
 }
 
+void MinDepth() {
+    TreeNode * node = [TreeNode createNodeTree:@[@3,@9,@20,@-1,@-1,@15,@7]];
+    int depth = [MinDepth_111 minDepth:node];
+    if (depth == 2) {
+        NSLog(@"MinDepth_111 success");
+    }
+}
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         TwoNums();
@@ -428,6 +436,7 @@ int main(int argc, const char * argv[]) {
         maxDepth();
         LevelOrderBottom();
         SortedArrayToBST();
+        MinDepth();
     }
     return 0;
 }
