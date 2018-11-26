@@ -23,6 +23,10 @@
 		2B3C9531219BF76D00BB56F4 /* LongestSubstring_03.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C9530219BF76D00BB56F4 /* LongestSubstring_03.m */; };
 		2B3C9534219C108A00BB56F4 /* FindMedianSortedArrays_04.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C9533219C108A00BB56F4 /* FindMedianSortedArrays_04.m */; };
 		2B3C9537219C500B00BB56F4 /* LongestPalindrome_05.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C9536219C500B00BB56F4 /* LongestPalindrome_05.m */; };
+		2B529D5021AC427B0009E451 /* CodeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B529D4F21AC427B0009E451 /* CodeString.m */; };
+		2B529D5321AC439C0009E451 /* CodeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B529D5221AC439C0009E451 /* CodeArray.m */; };
+		2B529D5721AC44CB0009E451 /* CodeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B529D5621AC44CB0009E451 /* CodeNode.m */; };
+		2B529D5A21AC46220009E451 /* DynamicAndGreedy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B529D5921AC46220009E451 /* DynamicAndGreedy.m */; };
 		2B56929E219B14870033096D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B56929D219B14870033096D /* main.m */; };
 		2B5692A6219B14EA0033096D /* TwoNum_01.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5692A5219B14EA0033096D /* TwoNum_01.m */; };
 		2B5692A9219B1A330033096D /* ReverseNum_07.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5692A8219B1A330033096D /* ReverseNum_07.m */; };
@@ -86,6 +90,15 @@
 		2B3C9533219C108A00BB56F4 /* FindMedianSortedArrays_04.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindMedianSortedArrays_04.m; sourceTree = "<group>"; };
 		2B3C9535219C500B00BB56F4 /* LongestPalindrome_05.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LongestPalindrome_05.h; sourceTree = "<group>"; };
 		2B3C9536219C500B00BB56F4 /* LongestPalindrome_05.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LongestPalindrome_05.m; sourceTree = "<group>"; };
+		2B529D4E21AC427B0009E451 /* CodeString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeString.h; sourceTree = "<group>"; };
+		2B529D4F21AC427B0009E451 /* CodeString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeString.m; sourceTree = "<group>"; };
+		2B529D5121AC439C0009E451 /* CodeArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeArray.h; sourceTree = "<group>"; };
+		2B529D5221AC439C0009E451 /* CodeArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeArray.m; sourceTree = "<group>"; };
+		2B529D5421AC449C0009E451 /* rainwatertrap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rainwatertrap.png; sourceTree = "<group>"; };
+		2B529D5521AC44CB0009E451 /* CodeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeNode.h; sourceTree = "<group>"; };
+		2B529D5621AC44CB0009E451 /* CodeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeNode.m; sourceTree = "<group>"; };
+		2B529D5821AC46220009E451 /* DynamicAndGreedy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicAndGreedy.h; sourceTree = "<group>"; };
+		2B529D5921AC46220009E451 /* DynamicAndGreedy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicAndGreedy.m; sourceTree = "<group>"; };
 		2B56929A219B14870033096D /* GLeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GLeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B56929D219B14870033096D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B5692A4219B14EA0033096D /* TwoNum_01.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoNum_01.h; sourceTree = "<group>"; };
@@ -131,6 +144,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B529D4C21AC41FD0009E451 /* CodePractice */ = {
+			isa = PBXGroup;
+			children = (
+				2B529D4E21AC427B0009E451 /* CodeString.h */,
+				2B529D4F21AC427B0009E451 /* CodeString.m */,
+				2B529D5121AC439C0009E451 /* CodeArray.h */,
+				2B529D5221AC439C0009E451 /* CodeArray.m */,
+				2B529D5421AC449C0009E451 /* rainwatertrap.png */,
+				2B529D5521AC44CB0009E451 /* CodeNode.h */,
+				2B529D5621AC44CB0009E451 /* CodeNode.m */,
+				2B529D5821AC46220009E451 /* DynamicAndGreedy.h */,
+				2B529D5921AC46220009E451 /* DynamicAndGreedy.m */,
+			);
+			path = CodePractice;
+			sourceTree = "<group>";
+		};
 		2B569291219B14870033096D = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +179,7 @@
 		2B56929C219B14870033096D /* GLeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				2B529D4C21AC41FD0009E451 /* CodePractice */,
 				2B84A2AF21AC0FB000377B0C /* public_struct */,
 				2B56929D219B14870033096D /* main.m */,
 				2B5692A4219B14EA0033096D /* TwoNum_01.h */,
@@ -286,6 +316,7 @@
 				2B30C05621A008570082FC3D /* LongestCommonPrefix_14.m in Sources */,
 				2BF27A5A21A7088200B628B2 /* LevelOrderBottom_107.m in Sources */,
 				2B30C06521A05DB70082FC3D /* DivideAndConquer.m in Sources */,
+				2B529D5A21AC46220009E451 /* DynamicAndGreedy.m in Sources */,
 				2BCDEDA7219DC75D00B60E64 /* strStr_28.m in Sources */,
 				2B30C06B21A13C4B0082FC3D /* PlusOne_66.m in Sources */,
 				2B936B0121A42B5F00C2B9D6 /* TreeNode.m in Sources */,
@@ -299,6 +330,8 @@
 				2B936AFB21A2E9D600C2B9D6 /* MergeTwoArray_88.m in Sources */,
 				2B936AF821A2E7B600C2B9D6 /* DeleteDuplicates_83.m in Sources */,
 				2B1C2C2521AC2A9500A25406 /* IsBalanced_110.m in Sources */,
+				2B529D5321AC439C0009E451 /* CodeArray.m in Sources */,
+				2B529D5721AC44CB0009E451 /* CodeNode.m in Sources */,
 				2B3C9537219C500B00BB56F4 /* LongestPalindrome_05.m in Sources */,
 				2B3C9531219BF76D00BB56F4 /* LongestSubstring_03.m in Sources */,
 				2B1C2C2821AC2B2D00A25406 /* MinDepth_111.m in Sources */,
@@ -311,6 +344,7 @@
 				2B5692A9219B1A330033096D /* ReverseNum_07.m in Sources */,
 				2B6D66A1219C80A300149FEE /* Palindrome_09.m in Sources */,
 				2B30C06E21A141ED0082FC3D /* AddBinary_67.m in Sources */,
+				2B529D5021AC427B0009E451 /* CodeString.m in Sources */,
 				2B30C06221A0583A0082FC3D /* MaxSubArray_53.m in Sources */,
 				2B30C06821A135C20082FC3D /* LengthOfLastWord_58.m in Sources */,
 			);

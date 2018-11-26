@@ -33,6 +33,7 @@
 #import "LevelOrderBottom_107.h"
 #import "SortedArrayToBST_108.h"
 #import "MinDepth_111.h"
+#import "CodeString.h"
 #pragma mark - Test
 /**
  01
@@ -437,6 +438,8 @@ int main(int argc, const char * argv[]) {
         LevelOrderBottom();
         SortedArrayToBST();
         MinDepth();
+        
+        [CodeString stringTestEntrance];
     }
     return 0;
 }
