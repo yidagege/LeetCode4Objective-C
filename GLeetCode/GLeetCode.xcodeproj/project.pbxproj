@@ -141,6 +141,7 @@
 		2B56929C219B14870033096D /* GLeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				2B84A2AF21AC0FB000377B0C /* public_struct */,
 				2B56929D219B14870033096D /* main.m */,
 				2B5692A4219B14EA0033096D /* TwoNum_01.h */,
 				2B5692A5219B14EA0033096D /* TwoNum_01.m */,
@@ -188,6 +189,13 @@
 				2BF27A5621A6F34900B628B2 /* MaxDepth_104.m */,
 				2BF27A5821A7088200B628B2 /* LevelOrderBottom_107.h */,
 				2BF27A5921A7088200B628B2 /* LevelOrderBottom_107.m */,
+			);
+			path = GLeetCode;
+			sourceTree = "<group>";
+		};
+		2B84A2AF21AC0FB000377B0C /* public_struct */ = {
+			isa = PBXGroup;
+			children = (
 				2B30C06321A05DB70082FC3D /* DivideAndConquer.h */,
 				2B30C06421A05DB70082FC3D /* DivideAndConquer.m */,
 				2B5692AD219B240C0033096D /* ListNode.h */,
@@ -199,7 +207,7 @@
 				2BF27A5E21A7107400B628B2 /* Queue.h */,
 				2BF27A5F21A7107400B628B2 /* Queue.m */,
 			);
-			path = GLeetCode;
+			path = public_struct;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
