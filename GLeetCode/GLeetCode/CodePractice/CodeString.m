@@ -14,6 +14,9 @@
 {
     int len = [[self class] longsetSubstring:@"bbsadgbbbbbbb"];
     NSLog(@"len");
+    
+    NSString * total =  [[self class] multiply:@"24" and:@"23"];
+    NSLog(@"multiply-%@",total);
 }
 
 /**
@@ -122,7 +125,43 @@
  
  输入的字符串只包含小写字母
  两个字符串的长度都在 [1, 10,000] 之间
+ 
+ bool checkInclusion(string s1, string s2) {
+ int len1=s1.length(),len2=s2.length();
+ if(len1>len2) return false;
+ vector<int> S(26);
+ vector<int> V(26);
+ for(int i=0;i<len1;i++){
+ S[s1[i]-97]++;
+ V[s2[i]-97]++;
+ }
+ for(int i=0;i<len2-len1+1;i++){
+ if(S==V) return true;
+ if(i<len2-len1){
+ V[s2[i]-97]--;
+ V[s2[i+len1]-97]++;
+ }
+ }
+ return false;
+ }
+https://leetcode-cn.com/problems/permutation-in-string/
  */
+
++ (BOOL)checkInclusion:(NSString*)s1 and:(NSString*)s2
+{
+    int len1 = (int)s1.length;
+    int len2 = (int)s2.length;
+    if (len1 > len2) {
+        return false;
+    }
+    NSMutableArray * arr1 = [NSMutableArray arrayWithCapacity:26];
+    NSMutableArray * arr2 = [NSMutableArray arrayWithCapacity:26];
+    for (int i=0; i<len1; i++) {
+        NSInteger val = [s1 characterAtIndex:i];
+        
+    }
+    return false;
+}
 
 /**
  4,字符串相乘
@@ -142,8 +181,64 @@
  num1 和 num2 只包含数字 0-9。
  num1 和 num2 均不以零开头，除非是数字 0 本身。
  不能使用任何标准库的大数类型（比如 BigInteger）或直接将输入转换为整数来处理。
+ https://blog.csdn.net/u011446177/article/details/52894191
  */
 
+/**
+  a*b={a1*10^(n1/2)+a0}*{b1*10^(n2/2)+b0}
+ */
++ (NSString *)multiply:(NSString*)num1 and:(NSString *)num2
+{
+    NSString * retval = @"";
+    if (num1.length == 1 || num2.length ==1) {
+        long temp1 = [num1 longLongValue];
+        long temp2 = [num2 longLongValue];
+        long val = temp1*temp2;
+        retval = [NSString stringWithFormat:@"%ld",val];
+        return retval;
+    }
+    /// a1 a0 b1 b0
+    int a0len = (int)num1.length/2;
+    int a1len = (int)num1.length - a0len;
+    NSString * a0 = [num1 substringWithRange:NSMakeRange(0, a0len)];
+    NSString *a1 = [num1 substringWithRange:NSMakeRange(a0len,a1len)];
+    
+    int b0len = (int)num2.length/2;
+    int b1len = (int)num2.length - b0len;
+    NSString * b0 = [num2 substringWithRange:NSMakeRange(0, b0len)];
+    NSString *b1 = [num2 substringWithRange:NSMakeRange(b0len,b1len)];
+    // 计算多项式的中的乘法
+    // * a*b=
+    // * (a1*b1)* 10^[(n1+n2)/2 ]
+    // * +(a1*b0)*10^(n1/2)
+    // * +(a0*b1)*10^(n2/2)
+    // * +(a0*b0)
+    //2.计算展开式中的乘法
+    NSString * a1b1 = [[self class] multiply:a1 and:b1];
+    NSString * a1b0 = [[self class] multiply:a1 and:b0];
+    NSString * a0b1 = [[self class] multiply:a0 and:b1];
+    NSString * a0b0 = [[self class] multiply:a0 and:b0];
+     //3.模拟移位
+
+    NSMutableString* retvala1b1 = [a1b1 mutableCopy];
+    for (int i=0; i<a0len + b0len; i++) {
+        [retvala1b1 appendString:@"0"];
+    }
+    NSMutableString* retvala1b0 = [a1b0 mutableCopy];
+    for (int i = 0; i<a0len; i++) {
+        [retvala1b0 appendString:@"0"];
+    }
+    NSMutableString* retvala0b1 = [a0b1 mutableCopy];
+    for (int i = 0; i<b0len; i++) {
+        [retvala0b1 appendString:@"0"];
+    }
+    long a1b1Val =  [retvala1b1 longLongValue];
+    long a1b0Val = [retvala1b0 longLongValue];
+    long a0b1Val = [retvala0b1 longLongValue];
+    long a0b0Val = [a0b0 longLongValue];
+    long total = a1b1Val + a1b0Val + a0b1Val + a0b0Val;
+    return [NSString stringWithFormat:@"%ld",total];
+}
 /**
  4,翻转字符串里的单词
  给定一个字符串，逐个翻转字符串中的每个单词。
