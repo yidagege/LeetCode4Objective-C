@@ -7,8 +7,14 @@
 //
 
 #import "CodeArray.h"
-
+#import "SortArray.h"
 @implementation CodeArray
+
++ (void)arrayTestEntrance
+{
+    NSArray * nums = [[self class] addNumbers:@[@-1, @0, @1, @2, @-1, @-4]];
+    NSLog(@"addNumber--%@",nums);
+}
 
 
 /**
@@ -36,14 +42,46 @@
  */
 +(NSArray * )addNumbers:(NSArray*)nums
 {
-    if ([nums[0] intValue] >0) {
-        return nil;
+    ///1,排序
+    NSMutableArray * numsM = nums.mutableCopy;
+    [SortArray sortingForInsertWithArray:numsM];
+    nums = numsM.copy;
+    NSMutableArray * retval = [NSMutableArray array];
+    int i=0,j=0,k=0;
+    for (i=0; i<nums.count; i++) {
+        // 1.排序 对于MutNums[i]来说，我们只需要负数和0，因为三个数之和为0，一定是有一个数为负数的，当然除去三个数都为0的情况。所以，我们取非正数。
+        if ([nums[i] intValue] > 0) {
+            break;
+        }
+        // 如果两个数字相同，我们直接跳到下一个循环。
+        if (i > 0 && [nums[i] intValue] == [nums[i-1] intValue]) {
+            continue;
+        }
+        int target = 0-[nums[i] intValue];
+        j = i+1; k = (int)nums.count-1;
+        while (j<k) {
+            int temp1 = [nums[j] intValue];
+            int temp2 = [nums[k] intValue];
+            if (temp1+temp2 == target) {
+                [retval addObject:@[nums[i],nums[j],nums[k]]];
+                while (j<k && [nums[j] intValue] == [nums[j+1] intValue]) {
+                    j++;
+                }
+                while (j<k && [nums[k] intValue] == [nums[k-1] intValue]) {
+                    k--;
+                }
+                j++;
+                k--;
+            } else if(temp1+temp2 < target) {
+                j++;
+            } else if (temp1+temp2 > target) {
+                k--;
+            }
+           
+        }
     }
-    NSMutableDictionary * diffMap = [NSMutableDictionary dictionary];
-    for (int i =0; i<nums.count; i++) {
-        
-    }
-    return nil;
+   
+  return retval.copy;
 }
 
 /**

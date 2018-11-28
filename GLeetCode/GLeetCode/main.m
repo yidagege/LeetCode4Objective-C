@@ -34,6 +34,7 @@
 #import "SortedArrayToBST_108.h"
 #import "MinDepth_111.h"
 #import "CodeString.h"
+#import "CodeArray.h"
 #pragma mark - Test
 /**
  01
@@ -440,6 +441,7 @@ int main(int argc, const char * argv[]) {
         MinDepth();
         
         [CodeString stringTestEntrance];
+        [CodeArray arrayTestEntrance];
     }
     return 0;
 }

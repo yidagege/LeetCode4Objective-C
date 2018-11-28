@@ -11,31 +11,31 @@
 @implementation SortArray
 //插入排序
 //时间复杂度 O(n^2)，最好情况下是 O(n)，空间复杂度是 O(1)，交换次数
--(void)sortingForInsertWithArray:(NSMutableArray *)array
++ (void)sortingForInsertWithArray:(NSMutableArray *)array
 {
     for (int i = 1; i<=array.count-1; i++) {
-        if (array[i-1] > array[i]) {
+        if ([array[i-1] intValue] > [array[i] intValue]) {
             int j = i-1;
-            id temp = array[i];
-            while (j>=0&&temp<array[j]) {
+            int temp = [array[i] intValue];
+            while (j>=0&&temp<[array[j] intValue]) {
                 array[j+1] = array[j];
                 j--;
             }
-            array[j+1] = temp;
+            array[j+1] = @(temp);
         }
     }
 }
 
 //希尔排序
 //例如希尔增量时间复杂度为O(n²)，而Hibbard增量的希尔排序的时间复杂度为O(  )，希尔排序时间复杂度的下界是n*log2n。
--(void)sortingForShellWithArray:(NSMutableArray *)array{
++(void)sortingForShellWithArray:(NSMutableArray *)array{
     int dk = (int)(array.count-1)/2;
     while (dk>=1) {
-        [self shellSortingWithArray:array startIndex:dk];
+        [[self class] shellSortingWithArray:array startIndex:dk];
         dk = dk/2;
     }
 }
--(void)shellSortingWithArray:(NSMutableArray *)array startIndex:(int)dk{
++(void)shellSortingWithArray:(NSMutableArray *)array startIndex:(int)dk{
     for (int x = 0; x < dk; x++) {
         for (int i = x + dk; i<=array.count-1; i+=dk) {
             if (array[i]<array[i-dk]) {
@@ -51,8 +51,10 @@
         }
     }
 }
+
 //选择排序
--(void)sortingForSelectWithArray:(NSMutableArray *)array{
++ (void)sortingForSelectWithArray:(NSMutableArray *)array
+{
     int i,j,k;
     for (i = 0; i<=array.count-1; i++) {
         k = i;
@@ -70,14 +72,15 @@
 }
 //堆排序
 //时间复杂度 O(nlog2(n))
--(void)sortingForHeapWithArray:(NSMutableArray *)array{
-    [self heapSort:array len:array.count];
++(void)sortingForHeapWithArray:(NSMutableArray *)array{
+    [[self class]  heapSort:array len:array.count];
 }
-- (void)heapSort:(NSMutableArray *)heapList len:(NSInteger)len{
+
++ (void)heapSort:(NSMutableArray *)heapList len:(NSInteger)len{
     //建立堆，从最底层的父节点开始
     NSLog(@"%@", heapList);
     for(NSInteger i = (heapList.count/2 -1); i>=0; i--)
-        [self adjustHeap:heapList location:i len:heapList.count];
+        [[self class]  adjustHeap:heapList location:i len:heapList.count];
     
     for(NSInteger i = heapList.count -1; i >= 0; i--){
         //R[N] move EndLocation
@@ -85,11 +88,11 @@
         heapList[0] = heapList[i];
         heapList[i] = @(maxEle).stringValue;
         
-        [self adjustHeap:heapList location:0 len:i];
+        [[self class]  adjustHeap:heapList location:0 len:i];
     }
 }
 
-- (void)adjustHeap:(NSMutableArray *)heapList location:(NSInteger)p len:(NSInteger)len{
++ (void)adjustHeap:(NSMutableArray *)heapList location:(NSInteger)p len:(NSInteger)len{
     NSInteger curParent = ((NSString *)heapList[p]).integerValue;
     NSInteger child = 2*p + 1;
     while (child < len) {
@@ -107,10 +110,11 @@
     }
     heapList[p] = @(curParent).stringValue;
 }
+
 //冒泡排序
 //感觉跟选择排序类似，但是每次除了最大值沉底之外，中间值也有变换。
--(void)sortingForBubblingWithArray:(NSMutableArray *)array{
-    
++ (void)sortingForBubblingWithArray:(NSMutableArray *)array
+{
     for (int i=0; i<=array.count-1; i++) {
         for (int j=0; j<array.count-1-i; j++) {
             if (array[j] > array[j+1] ) {
@@ -121,8 +125,9 @@
         }
     }
 }
+
 //冒泡排序优化写法，记录位置，最好情况O(n),而且后边有序的可以快速定位
--(void)sortingForBubblingBetterWithArray:(NSMutableArray *)array{
++ (void)sortingForBubblingBetterWithArray:(NSMutableArray *)array{
     NSInteger end = array.count;
     while (end > 1) {
         int newEnd = 0;
@@ -137,12 +142,13 @@
         end = newEnd;
     }
 }
--(void)sortingForFastWithArray:(NSMutableArray *)array {
-    [self sortingForFastWithArray:array strartIndex:0 endIndex:array.count-1];
+
++ (void)sortingForFastWithArray:(NSMutableArray *)array {
+    [[self class]  sortingForFastWithArray:array strartIndex:0 endIndex:array.count-1];
 }
 //快速排序
 //时间复杂度 最好O(nlogn)，最坏O(n²)
--(void)sortingForFastWithArray:(NSMutableArray *)array strartIndex:(NSInteger)strartIndex endIndex:(NSInteger)endIndex{
++ (void)sortingForFastWithArray:(NSMutableArray *)array strartIndex:(NSInteger)strartIndex endIndex:(NSInteger)endIndex{
     
     if (strartIndex>endIndex) {
         return;
@@ -163,21 +169,23 @@
         array[j] = array[i];
     }
     array[i] = key;
-    [self sortingForFastWithArray:array strartIndex:strartIndex endIndex:i-1];
-    [self sortingForFastWithArray:array strartIndex:i+1 endIndex:endIndex];
+    [[self class]  sortingForFastWithArray:array strartIndex:strartIndex endIndex:i-1];
+    [[self class]  sortingForFastWithArray:array strartIndex:i+1 endIndex:endIndex];
 }
--(void)sortingForMergeWithArray:(NSMutableArray *)array {
+
++ (void)sortingForMergeWithArray:(NSMutableArray *)array {
     [self sortingForMergeWithArray:array standbyArray:[NSMutableArray arrayWithCapacity:array.count] startIndex:0 endIndex:array.count - 1];
 }
+
 //归并排序
--(void)sortingForMergeWithArray:(NSMutableArray *)array standbyArray:(NSMutableArray *)newArray startIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex{
++ (void)sortingForMergeWithArray:(NSMutableArray *)array standbyArray:(NSMutableArray *)newArray startIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex{
     
     NSInteger middle;
     if (startIndex<endIndex) {
         
         middle = (startIndex +endIndex)/2;
-        [self sortingForMergeWithArray:array standbyArray:newArray startIndex:startIndex endIndex:middle];
-        [self sortingForMergeWithArray:array standbyArray:newArray startIndex:middle+1 endIndex:endIndex];
+        [[self class]  sortingForMergeWithArray:array standbyArray:newArray startIndex:startIndex endIndex:middle];
+        [[self class]  sortingForMergeWithArray:array standbyArray:newArray startIndex:middle+1 endIndex:endIndex];
         
         NSInteger i = startIndex,
         j = middle+1,
