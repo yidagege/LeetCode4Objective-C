@@ -182,6 +182,7 @@ https://leetcode-cn.com/problems/permutation-in-string/
  num1 和 num2 均不以零开头，除非是数字 0 本身。
  不能使用任何标准库的大数类型（比如 BigInteger）或直接将输入转换为整数来处理。
  https://blog.csdn.net/u011446177/article/details/52894191
+ https://blog.csdn.net/jeffleo/article/details/53446095
  */
 
 /**
