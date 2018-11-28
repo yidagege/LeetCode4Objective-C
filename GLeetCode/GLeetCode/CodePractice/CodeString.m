@@ -20,6 +20,8 @@
     
     NSString * reverse = [[self class] strReverse:@"i am a student"];
     NSLog(@"strReverse-%@",reverse);
+    NSArray * array = [[self class] restoreIpAddresses:@"25525511135"];
+    NSLog(@"restoreIP-%@",array);
 }
 
 /**
@@ -310,5 +312,39 @@ https://leetcode-cn.com/problems/permutation-in-string/
  
  输入: "25525511135"
  输出: ["255.255.11.135", "255.255.111.35"]
+ 
+ 链接：https://www.nowcoder.com/questionTerminal/ce73540d47374dbe85b3125f57727e1e
  */
+
+void DFS(NSMutableArray * array,NSString *t,NSString *s,int count) {
+    NSLog(@"t--%@,s--%@,count--%d",t,s,count);
+    if (count == 3 && isValid(s)) {
+        [array addObject:[NSString stringWithFormat:@"%@%@",t,s]];
+        return;
+    }
+    for (int i =1; i<4&&i<s.length; i++) {
+        NSString *temp = [s substringWithRange:NSMakeRange(0, i)];
+        if (isValid(temp)) {
+            DFS(array, [NSString stringWithFormat:@"%@%@.",t,temp], [s substringFromIndex:i], count+1);
+        }
+    }
+}
+
+BOOL isValid(NSString * s)
+{
+    if ([s isEqualToString:@" "]) {
+        return NO;
+    }
+    int num = [s intValue];
+    return num>=0 && num<=255;
+}
+
++ (NSArray *)restoreIpAddresses:(NSString*)string
+{
+
+    NSMutableArray * array = [NSMutableArray array];
+    NSString *t = @"";
+    DFS(array, t, string, 0);
+    return array.copy;
+}
 @end
