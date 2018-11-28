@@ -44,7 +44,7 @@
 {
     ///1,排序
     NSMutableArray * numsM = nums.mutableCopy;
-    [SortArray sortingForInsertWithArray:numsM];
+    [SortArray sortInsert:numsM];
     nums = numsM.copy;
     NSMutableArray * retval = [NSMutableArray array];
     int i=0,j=0,k=0;
@@ -80,7 +80,6 @@
            
         }
     }
-   
   return retval.copy;
 }
 

@@ -9,22 +9,93 @@
 #import "SortArray.h"
 
 @implementation SortArray
-//插入排序
-//时间复杂度 O(n^2)，最好情况下是 O(n)，空间复杂度是 O(1)，交换次数
-+ (void)sortingForInsertWithArray:(NSMutableArray *)array
+
+/**
+ 冒泡排序
+
+ @param array <#array description#>
+ */
++ (void)sortBubbling:(NSMutableArray *)array
 {
-    for (int i = 1; i<=array.count-1; i++) {
-        if ([array[i-1] intValue] > [array[i] intValue]) {
-            int j = i-1;
-            int temp = [array[i] intValue];
-            while (j>=0&&temp<[array[j] intValue]) {
-                array[j+1] = array[j];
-                j--;
+    for (int i =0; i<array.count; i++) {
+        for (int j =0 ; j<array.count-i; j++) {
+            if ([array[j] intValue]> [array[j+1] intValue]) {
+                id temp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = temp;
             }
-            array[j+1] = @(temp);
         }
     }
 }
+
+/**
+ 冒泡排序优化写法
+ 没有数据交换时,提前退出循环.
+ @param array <#array description#>
+ */
++ (void)sortBubblingBetter:(NSMutableArray *)array
+{
+    for (int i =0; i<array.count; i++) {
+        /// 设置提前结束冒泡循环的标志位
+        BOOL flag = NO;
+        for (int j =0 ; j<array.count-i; j++) {
+            if ([array[j] intValue]> [array[j+1] intValue]) {
+                id temp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = temp;
+                flag = YES; /// 有数据交换
+            }
+        }
+        if (!flag) { /// 没有数据交换提前退出
+            break;
+        }
+    }
+}
+
+
+/**
+ 插入排序
+ 时间复杂度 O(n^2)，最好情况下是 O(n)，空间复杂度是 O(1)，交换次数
+ @param array <#array description#>
+ */
++ (void)sortInsert:(NSMutableArray *)array
+{
+    for (int i =1 ; i<array.count; i++) {
+        int val = [array[i] intValue];
+        int j = i-1;
+        for (; j>=0; j--) {
+            if ([array[j] intValue] > val) {
+                array[j+1] = array[j];
+            } else {
+                break;
+            }
+        }
+        array[j+1] = @(val);
+    }
+}
+
+/**
+ 选择排序
+ 每一趟从待排序的记录中选出最小的元素，顺序放在已排好序的序列最后，直到全部记录排序完毕。
+ @param array <#array description#>
+ */
++ (void)sortSelection:(NSMutableArray*)array
+{
+    for (int i = 0; i<array.count; i++) {
+        int k = i;
+        for (int j =i+1; j<array.count; j++) {
+            if ([array[k] intValue] > [array[j] intValue]) {
+                k = j;
+            }
+        }
+        if (k != i) {
+            id temp = array[i];
+            array[i] = array[k];
+            array[k] = temp;
+        }
+    }
+}
+
 
 //希尔排序
 //例如希尔增量时间复杂度为O(n²)，而Hibbard增量的希尔排序的时间复杂度为O(  )，希尔排序时间复杂度的下界是n*log2n。
@@ -52,24 +123,7 @@
     }
 }
 
-//选择排序
-+ (void)sortingForSelectWithArray:(NSMutableArray *)array
-{
-    int i,j,k;
-    for (i = 0; i<=array.count-1; i++) {
-        k = i;
-        for (j = i+1; j<=array.count-1; j++) {
-            if (array[k] >array[j] ) {
-                k = j;
-            }
-        }
-        if (k!=i) {
-            id temp = array[i];
-            array[i]= array[k];
-            array[k]= temp;
-        }
-    }
-}
+
 //堆排序
 //时间复杂度 O(nlog2(n))
 +(void)sortingForHeapWithArray:(NSMutableArray *)array{
@@ -111,37 +165,6 @@
     heapList[p] = @(curParent).stringValue;
 }
 
-//冒泡排序
-//感觉跟选择排序类似，但是每次除了最大值沉底之外，中间值也有变换。
-+ (void)sortingForBubblingWithArray:(NSMutableArray *)array
-{
-    for (int i=0; i<=array.count-1; i++) {
-        for (int j=0; j<array.count-1-i; j++) {
-            if (array[j] > array[j+1] ) {
-                id string = array[j];
-                array[j]= array[j+1];
-                array[j+1] = string;
-            }
-        }
-    }
-}
-
-//冒泡排序优化写法，记录位置，最好情况O(n),而且后边有序的可以快速定位
-+ (void)sortingForBubblingBetterWithArray:(NSMutableArray *)array{
-    NSInteger end = array.count;
-    while (end > 1) {
-        int newEnd = 0;
-        for (int j=0; j < end - 1; j++) {
-            if (array[j] > array[j+1] ) {
-                id string = array[j];
-                array[j]= array[j+1];
-                array[j+1] = string;
-                newEnd = j + 1;
-            }
-        }
-        end = newEnd;
-    }
-}
 
 + (void)sortingForFastWithArray:(NSMutableArray *)array {
     [[self class]  sortingForFastWithArray:array strartIndex:0 endIndex:array.count-1];
