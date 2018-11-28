@@ -7,7 +7,7 @@
 //
 
 #import "CodeString.h"
-
+#import "Stack.h"
 @implementation CodeString
 
 + (void)stringTestEntrance
@@ -17,6 +17,9 @@
     
     NSString * total =  [[self class] multiply:@"24" and:@"23"];
     NSLog(@"multiply-%@",total);
+    
+    NSString * reverse = [[self class] strReverse:@"i am a student"];
+    NSLog(@"strReverse-%@",reverse);
 }
 
 /**
@@ -255,6 +258,33 @@ https://leetcode-cn.com/problems/permutation-in-string/
  如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。
  进阶: 请选用C语言的用户尝试使用 O(1) 空间复杂度的原地解法。
  */
+
++ (NSString * )strReverse:(NSString *)string
+{
+    if (string.length <= 2) {
+        return string;
+    }
+    int left = 0,right=0;
+    Stack *stack = [Stack new];
+    while (right<string.length) {
+        NSString * temp = [string substringWithRange:NSMakeRange(right, 1)];
+        if ([temp isEqualToString:@" "]) {
+             NSString * temp2 = [string substringWithRange:NSMakeRange(left, right-left)];
+            [stack push:temp2];
+            left = right+1 ;
+        } else if (right==string.length-1) {
+            NSString * temp2 = [string substringWithRange:NSMakeRange(left, right-left+1)];
+            [stack push:temp2];
+        }
+        right ++;
+    }
+    NSMutableString * retval = @"".mutableCopy;
+    while (!stack.isEmpty) {
+        [retval appendString:[stack pop]];
+        [retval appendString:@" "];
+    }
+    return retval.copy;
+}
 
 /**
  5,简化路径

@@ -40,8 +40,7 @@
 
 - (id)top {
     if ([self isEmpty]) return nil;
-    NSUInteger index = _arr.count - 1;
-    return _arr[index];
+    return [_arr lastObject];
 }
 
 - (NSUInteger)size {
