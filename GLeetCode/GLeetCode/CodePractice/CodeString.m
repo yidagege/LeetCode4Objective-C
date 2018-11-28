@@ -22,9 +22,24 @@
     NSLog(@"strReverse-%@",reverse);
     NSArray * array = [[self class] restoreIpAddresses:@"25525511135"];
     NSLog(@"restoreIP-%@",array);
+    /**
+     path = "/home/", => "/home"
+     path = "/a/./b/../../c/", => "/c"
+     
+     边界情况:
+     
+     你是否考虑了 路径 = "/../" 的情况？
+     在这种情况下，你需返回 "/" 。
+     此外，路径中也可能包含多个斜杠 '/' ，如 "/home//foo/" 。
+     在这种情况下，你可忽略多余的斜杠，返回 "/home/foo" 。
+     */
+    NSString * path = [[self class] simplifyPath:@"/home//foo/"];
+    NSLog(@"simplifyPath--%@",path);
 }
 
 /**
+ 
+ 
  1,无重复字符的最长子串
  给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
  
@@ -303,6 +318,38 @@ https://leetcode-cn.com/problems/permutation-in-string/
  此外，路径中也可能包含多个斜杠 '/' ，如 "/home//foo/" 。
  在这种情况下，你可忽略多余的斜杠，返回 "/home/foo" 。
  */
+/**
+ 重复连续出现的'/'，只按1个处理，即跳过重复连续出现的'/'；
+ 如果路径名是"."，则不处理；
+ 如果路径名是".."，则需要弹栈，如果栈为空，则不做处理；
+ 如果路径名为其他字符串，入栈。
+ 最后，再逐个取出栈中元素（即已保存的路径名），用'/'分隔并连接起来，不过要注意顺序呦。
+*/
++ (NSString*)simplifyPath:(NSString *)path
+{
+    Stack * stack = [Stack new];
+    NSArray * array = [path componentsSeparatedByString:@"/"];
+    if (array.count <=0 ) {
+        return @"/";
+    }
+    NSArray * rules = @[@".",@" ",@"",@".."];
+    for (int i =0; i<array.count; i++) {
+        NSString * temp = array[i];
+        if (![rules containsObject:temp]) {
+            [stack push:temp];
+        }
+        if ([temp isEqualToString:@".."] && !stack.isEmpty) {
+            [stack pop];
+        }
+    }
+    NSMutableString * retval = @"".mutableCopy;
+    while (![stack isEmpty]) {
+        [retval appendString:@"/"];
+        NSString * temp = stack.pop;
+        [retval appendString:temp];
+    }
+    return retval.length>0 ? retval : @"/";
+}
 
 /**
  6,复原IP地址
