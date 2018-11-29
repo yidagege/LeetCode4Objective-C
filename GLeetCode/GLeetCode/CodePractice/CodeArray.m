@@ -14,6 +14,9 @@
 {
     NSArray * nums = [[self class] addNumbers:@[@-1, @0, @1, @2, @-1, @-4]];
     NSLog(@"addNumber--%@",nums);
+    
+    int val = [[self class] sortArrayTopK:2 array:@[@3,@2,@1,@5,@6,@4]];
+    NSLog(@"sortArrayTopK --%d",val);
 }
 
 
@@ -158,6 +161,17 @@
  
  你可以假设 k 总是有效的，且 1 ≤ k ≤ 数组的长度。
  */
+
++ (int)sortArrayTopK:(int)k array:(NSArray*)array
+{
+    NSMutableArray * arrayM = array.mutableCopy;
+     [SortArray sortFast:arrayM];
+//    [SortArray sortInsert:arrayM];
+    array = arrayM.copy;
+    
+    return [array[array.count-k] intValue];
+}
+
 
 /**
  6,最长连续序列

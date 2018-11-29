@@ -38,6 +38,19 @@ NS_ASSUME_NONNULL_BEGIN
  @param array <#array description#>
  */
 + (void)sortSelection:(NSMutableArray*)array;
+
+/**
+ 快速排序
+ 分治思想,先分区,在处理子问题
+ O(nlogn) 最坏: O(n2)
+ 处理过程从上自下,先分区,在处理子问题. 原地排序
+ 递推公式：
+ quick_sort(p…r) = quick_sort(p…q-1) + quick_sort(q+1, r)
+ 终止条件：
+ p >= r
+ @param array <#array description#>
+ */
++ (void)sortFast:(NSMutableArray *)array;
 @end
 
 NS_ASSUME_NONNULL_END

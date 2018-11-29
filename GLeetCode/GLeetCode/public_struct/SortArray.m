@@ -96,6 +96,83 @@
     }
 }
 
+/**
+ 快速排序
+ 分治思想,先分区,在处理子问题
+ O(nlogn) 最坏: O(n2)
+ 处理过程从上自下,先分区,在处理子问题. 原地排序
+ 递推公式：
+ quick_sort(p…r) = quick_sort(p…q-1) + quick_sort(q+1, r)
+ 终止条件：
+ p >= r
+ @param array <#array description#>
+ */
++ (void)sortFast:(NSMutableArray *)array
+{
+    if (array.count <= 1) {
+        return;
+    }
+    [[self class] sortFast:array begin:0 end:(int)array.count-1];
+}
+
++ (void)sortFast:(NSMutableArray *)array begin:(int)begin end:(int)end
+{
+    if (begin >= end) {
+        return;
+    }
+    int k = [[self class] partitionFast:array begin:begin end:end];
+    [[self class] sortFast:array begin:begin end:k];
+    [[self class] sortFast:array begin:k+1 end:end];
+}
+
+/**
+ 快排原地分区函数
+ partition(A, p, r) {
+ pivot := A[r]
+ i := p
+ for j := p to r-1 do {
+ if A[j] < pivot {
+ swap A[i] with A[j]
+ i := i+1
+ }
+ }
+ swap A[i] with A[r]
+ return i
+ 
+ */
++ (int)partitionFast:(NSMutableArray *)array begin:(int)begin end:(int)end
+{
+     /*
+    int pivot = [array[end] intValue];
+    int i = begin;
+    for (int j =begin; j<end; j++) {
+        if ([array[j] intValue]<pivot) {
+            array[i] = array[j];
+            i++;
+        }
+    }
+    array[i] = array[end];
+    return i;
+        */
+    int i = begin,j=end;
+    int temp = [array[begin] intValue];
+    while (i<j) {
+        while (i<j && temp<=[array[j] intValue]) {
+            j--;
+        }
+        array[i] = array[j];
+        
+        while (i<j && temp>=[array[i] intValue]) {
+            i++;
+        }
+        array[j] = array[i];
+    }
+    array[i] = @(temp);
+    return i;
+
+}
+
+#pragma mark - old
 
 //希尔排序
 //例如希尔增量时间复杂度为O(n²)，而Hibbard增量的希尔排序的时间复杂度为O(  )，希尔排序时间复杂度的下界是n*log2n。
@@ -165,36 +242,6 @@
     heapList[p] = @(curParent).stringValue;
 }
 
-
-+ (void)sortingForFastWithArray:(NSMutableArray *)array {
-    [[self class]  sortingForFastWithArray:array strartIndex:0 endIndex:array.count-1];
-}
-//快速排序
-//时间复杂度 最好O(nlogn)，最坏O(n²)
-+ (void)sortingForFastWithArray:(NSMutableArray *)array strartIndex:(NSInteger)strartIndex endIndex:(NSInteger)endIndex{
-    
-    if (strartIndex>endIndex) {
-        return;
-    }
-    NSInteger i = strartIndex, j = endIndex;
-    id  key = array[strartIndex];
-    
-    while (i<j) {
-        
-        while (i<j && key<=array[j]) {
-            j--;
-        }
-        array[i] = array[j];
-        
-        while (i<j && key>=array[i]) {
-            i++;
-        }
-        array[j] = array[i];
-    }
-    array[i] = key;
-    [[self class]  sortingForFastWithArray:array strartIndex:strartIndex endIndex:i-1];
-    [[self class]  sortingForFastWithArray:array strartIndex:i+1 endIndex:endIndex];
-}
 
 + (void)sortingForMergeWithArray:(NSMutableArray *)array {
     [self sortingForMergeWithArray:array standbyArray:[NSMutableArray arrayWithCapacity:array.count] startIndex:0 endIndex:array.count - 1];
