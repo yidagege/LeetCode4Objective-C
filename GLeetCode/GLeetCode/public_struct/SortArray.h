@@ -51,6 +51,16 @@ NS_ASSUME_NONNULL_BEGIN
  @param array <#array description#>
  */
 + (void)sortFast:(NSMutableArray *)array;
+
+/**
+ 归并排序
+ 和快排思路一样,分治思想,不过是先处理子问题 在分区
+ 时间最好最坏和空间O(nlogn)
+ @param array <#array description#>
+ */
++ (void)sortMerge:(NSMutableArray *)array;
+
++ (void)sortingForMergeWithArray:(NSMutableArray *)array;
 @end
 
 NS_ASSUME_NONNULL_END

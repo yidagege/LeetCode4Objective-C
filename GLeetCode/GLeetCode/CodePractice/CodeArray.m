@@ -14,8 +14,8 @@
 {
     NSArray * nums = [[self class] addNumbers:@[@-1, @0, @1, @2, @-1, @-4]];
     NSLog(@"addNumber--%@",nums);
-    
-    int val = [[self class] sortArrayTopK:2 array:@[@3,@2,@1,@5,@6,@4]];
+//    @[@3,@4,@5,@1,@2,@6]
+    int val = [[self class] sortArrayTopK:2 array:@[@3,@1,@6,@3,@12,@0,@5,@15]];
     NSLog(@"sortArrayTopK --%d",val);
 }
 
@@ -165,8 +165,10 @@
 + (int)sortArrayTopK:(int)k array:(NSArray*)array
 {
     NSMutableArray * arrayM = array.mutableCopy;
-     [SortArray sortFast:arrayM];
+//     [SortArray sortFast:arrayM];
+    [SortArray sortMerge:arrayM];
 //    [SortArray sortInsert:arrayM];
+//    [SortArray sortingForMergeWithArray:arrayM];
     array = arrayM.copy;
     
     return [array[array.count-k] intValue];

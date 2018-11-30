@@ -169,7 +169,63 @@
     }
     array[i] = @(temp);
     return i;
+}
 
+/**
+ 归并排序
+ 和快排思路一样,分治思想,不过是先处理子问题 在分区
+ 时间和空间O(nlogn)
+ @param array <#array description#>
+ */
++ (void)sortMerge:(NSMutableArray *)array
+{
+    [[self class] sortMerge:array beign:0 end:(int)array.count-1];
+}
+
+
+/**
+ 合并数组.需要 new array 开销
+ */
+void sortMergeArray(NSMutableArray * array,int begin,int mid,int end) {
+    
+    int i = begin;
+    int j = mid+1;
+    int k = 0;
+    NSMutableArray * temp = [NSMutableArray array];
+    while (i<=mid && j<=end) {
+        if ([array[i] intValue] <= [array[j] intValue]) {
+            temp[k++] = array[i++];
+        } else {
+            temp[k++] = array[j++];
+        }
+    }
+    // 判断哪个子数组中有剩余的数据
+    int s = i,e = mid;
+    if (j<=end) {
+        s = j;
+        e = end;
+    }
+     // 将剩余的数据拷贝到临时数组 tmp
+    while (s<=e) {
+        temp[k++] = array[s++];
+    }
+     // 将 tmp 中的数组拷贝回 array
+    for (int i = 0; i<=end-begin; i++) {
+        array[begin+i] = temp[i];
+    }
+
+}
+
++ (void)sortMerge:(NSMutableArray *)array beign:(int)begin end:(int)end
+{
+    if (begin >= end) {
+        return;
+    }
+    int mid = (begin + end)/2;
+    ///分治递归
+    [[self class] sortMerge:array beign:begin end:mid];
+    [[self class] sortMerge:array beign:mid+1 end:end];
+    sortMergeArray(array, begin, mid, end);
 }
 
 #pragma mark - old
@@ -243,40 +299,4 @@
 }
 
 
-+ (void)sortingForMergeWithArray:(NSMutableArray *)array {
-    [self sortingForMergeWithArray:array standbyArray:[NSMutableArray arrayWithCapacity:array.count] startIndex:0 endIndex:array.count - 1];
-}
-
-//归并排序
-+ (void)sortingForMergeWithArray:(NSMutableArray *)array standbyArray:(NSMutableArray *)newArray startIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex{
-    
-    NSInteger middle;
-    if (startIndex<endIndex) {
-        
-        middle = (startIndex +endIndex)/2;
-        [[self class]  sortingForMergeWithArray:array standbyArray:newArray startIndex:startIndex endIndex:middle];
-        [[self class]  sortingForMergeWithArray:array standbyArray:newArray startIndex:middle+1 endIndex:endIndex];
-        
-        NSInteger i = startIndex,
-        j = middle+1,
-        k = startIndex;
-        
-        while (i!=middle+1 && j!=endIndex +1) {
-            if (array[i]>=array[j]) {
-                newArray[k++] = array[j++];
-            }else{
-                newArray[k++] = array[i++];
-            }
-        }
-        while (i!=middle+1) {
-            newArray[k++] = array[i++];
-        }
-        while (j!=endIndex+1) {
-            newArray[k++] = array[j++];
-        }
-        for (i = startIndex; i<=endIndex; i++) {
-            array[i] = newArray[i];
-        }
-    }
-}
 @end
