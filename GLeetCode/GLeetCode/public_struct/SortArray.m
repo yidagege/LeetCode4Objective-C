@@ -228,6 +228,67 @@ void sortMergeArray(NSMutableArray * array,int begin,int mid,int end) {
     sortMergeArray(array, begin, mid, end);
 }
 
+/**
+ 桶排序
+
+ @param array <#array description#>
+ */
++ (void)sortBucket:(NSMutableArray *)array
+{
+    
+}
+
+/**
+ 计数排序
+ 是线性排序桶排序的一种特殊情况,当要排序的N个数据所处的范围并不大,比如为K,我们把这些数据分到k个桶里.每个桶内数据是相同的,省掉了桶内排序的时间
+ O(n)
+ @param array <#array description#>
+ */
+
++ (void)sortCounting:(NSMutableArray *)array
+{
+    if (array.count <=1) {
+        return;
+    }
+    int max = [array.firstObject intValue];
+    // 查找数组中数据的范围
+    for (NSNumber *num in array) {
+        if (max < [num intValue]) {
+            max = [num intValue];
+        }
+    }
+    // 申请一个计数数组
+    NSMutableArray * counts = [NSMutableArray arrayWithCapacity:max+1];
+    for (int i = 0; i<max+1; i++) {
+        counts[i] = @(0);
+    }
+    // 计算每个元素的个数，放入 counts 中
+    for (int i =0; i<array.count; i++) {
+        int value = [counts[[array[i] intValue]] intValue];
+        counts[[array[i] intValue]] = @(value+1);
+    }
+    // 依次累加,用来计算在排序后数组中的位置.
+    for (int i = 1; i <= max; ++i) {
+        counts[i] = @([counts[i-1] intValue]  + [counts[i] intValue]);
+    }
+    // 临时数组 r，存储排序之后的结果
+    NSMutableArray * temps = [NSMutableArray array];
+    for (int i = 0; i<(int)array.count; i++) {
+        temps[i] = @(0);
+    }
+    // 计算排序的关键步骤
+    for (int i = (int)array.count -1; i>=0; --i) {
+        int index = [counts[[array[i] intValue]] intValue] - 1;
+        temps[index] = array[i];
+        int value = [counts[[array[i] intValue]] intValue];
+        counts[[array[i] intValue]] = @(value-1);
+    }
+    // 将结果拷贝给 a 数组
+    for (int i = 0; i < (int)array.count; ++i) {
+        array[i] = temps[i];
+    }
+}
+
 #pragma mark - old
 
 //希尔排序

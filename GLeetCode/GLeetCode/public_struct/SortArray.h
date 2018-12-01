@@ -60,7 +60,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)sortMerge:(NSMutableArray *)array;
 
-+ (void)sortingForMergeWithArray:(NSMutableArray *)array;
+/**
+ 计数排序
+ 是线性排序桶排序的一种特殊情况,当要排序的N个数据所处的范围并不大,比如为K,我们把这些数据分到k个桶里.每个桶内数据是相同的,省掉了桶内排序的时间
+ O(n)
+ @param array <#array description#>
+ */
++ (void)sortCounting:(NSMutableArray *)array;
 @end
 
 NS_ASSUME_NONNULL_END

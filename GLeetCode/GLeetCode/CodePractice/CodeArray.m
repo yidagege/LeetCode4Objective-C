@@ -166,7 +166,8 @@
 {
     NSMutableArray * arrayM = array.mutableCopy;
 //     [SortArray sortFast:arrayM];
-    [SortArray sortMerge:arrayM];
+//    [SortArray sortMerge:arrayM];
+    [SortArray sortCounting:arrayM];
 //    [SortArray sortInsert:arrayM];
 //    [SortArray sortingForMergeWithArray:arrayM];
     array = arrayM.copy;
