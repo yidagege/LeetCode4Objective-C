@@ -14,8 +14,8 @@
 {
     NSArray * nums = [[self class] addNumbers:@[@-1, @0, @1, @2, @-1, @-4]];
     NSLog(@"addNumber--%@",nums);
-//    @[@3,@4,@5,@1,@2,@6]
-    int val = [[self class] sortArrayTopK:2 array:@[@3,@1,@6,@3,@12,@0,@5,@15]];
+//    @[@3,@4,@5,@1,@2,@6] @[@3,@1,@6,@3,@12,@0,@5,@15]
+    int val = [[self class] sortArrayTopK:2 array:@[@3,@4,@5,@1,@2,@6]];
     NSLog(@"sortArrayTopK --%d",val);
 }
 
@@ -162,19 +162,86 @@
  你可以假设 k 总是有效的，且 1 ≤ k ≤ 数组的长度。
  */
 
+/**
+利用快排思想寻找第k大的数
+ */
 + (int)sortArrayTopK:(int)k array:(NSArray*)array
 {
-    NSMutableArray * arrayM = array.mutableCopy;
-//     [SortArray sortFast:arrayM];
-//    [SortArray sortMerge:arrayM];
-    [SortArray sortCounting:arrayM];
-//    [SortArray sortInsert:arrayM];
-//    [SortArray sortingForMergeWithArray:arrayM];
-    array = arrayM.copy;
+//    NSMutableArray * arrayM = array.mutableCopy;
+////     [SortArray sortFast:arrayM];
+////    [SortArray sortMerge:arrayM];
+//    [SortArray sortCounting:arrayM];
+////    [SortArray sortInsert:arrayM];
+////    [SortArray sortingForMergeWithArray:arrayM];
+//    array = arrayM.copy;
+//
+//    return [array[array.count-k] intValue];
     
-    return [array[array.count-k] intValue];
+    return  [[self class] sortQuick:array.mutableCopy low:0 high:(int)array.count-1 k:k];
 }
 
+static int count = 1;
++ (int)sortQuick:(NSMutableArray *)array low:(int)low high:(int)high k:(int)k
+{
+    if (low>high) {
+        return -1;
+    }
+    int index = [[self class] partitionFast:array begin:low end:high];
+    count=index-low+1;// 比基点大 的 点个数
+    if (count > k) {
+        return [[self class] sortQuick:array low:low high:index-1 k:k];
+    } else if (count < k) {
+        return [[self class] sortQuick:array low:index+1 high:high k:k];
+    } else {
+        return [array[index] intValue];
+    }
+    
+}
+
+
+/**
+快排核心算法 先移动末指针 在移动首指针 直到 i>j
+int i=low,j=high,temp=a[low];
+if(low < high)
+{
+    while(i<j)
+    {
+        while(i<j && temp>=a[j])
+            j--;
+        if(i<j)// 双重验证
+        {
+            a[i]=a[j];
+            i++;
+        }
+        while(i<j && temp<=a[i])
+            i++;
+        if(i<j)
+        {
+            a[j]=a[i];
+            j--;
+        }
+    }
+    a[i]=temp;
+}
+return i;
+ */
++ (int)partitionFast:(NSMutableArray *)array begin:(int)begin end:(int)end
+{
+    int i = begin,j=end;
+    int temp = [array[begin] intValue];
+    while (i<j) {
+        while (i<j && temp>=[array[j] intValue]) {
+            j--;
+        }
+        array[i] = array[j];
+        while (i<j && temp<=[array[i] intValue]) {
+            i++;
+        }
+        array[j] = array[i];
+    }
+    array[i] = @(temp);
+    return i;
+}
 
 /**
  6,最长连续序列

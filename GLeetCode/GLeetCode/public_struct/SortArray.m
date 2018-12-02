@@ -142,18 +142,7 @@
  */
 + (int)partitionFast:(NSMutableArray *)array begin:(int)begin end:(int)end
 {
-     /*
-    int pivot = [array[end] intValue];
-    int i = begin;
-    for (int j =begin; j<end; j++) {
-        if ([array[j] intValue]<pivot) {
-            array[i] = array[j];
-            i++;
-        }
-    }
-    array[i] = array[end];
-    return i;
-        */
+
     int i = begin,j=end;
     int temp = [array[begin] intValue];
     while (i<j) {
