@@ -148,6 +148,10 @@
  解释: 最长连续递增序列是 [2], 长度为1。
  注意：数组长度不会超过10000。
  */
++ (int)longestGrowthSequence:(NSArray*)array
+{
+    return 1;
+}
 
 /**
  5,数组中的第K个最大元素
