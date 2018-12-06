@@ -17,6 +17,10 @@
 //    @[@3,@4,@5,@1,@2,@6] @[@3,@1,@6,@3,@12,@0,@5,@15]
     int val = [[self class] sortArrayTopK:2 array:@[@3,@4,@5,@1,@2,@6]];
     NSLog(@"sortArrayTopK --%d",val);
+    
+    /// 输入: [100, 4, 200, 1, 3, 2]
+    int longest = [[self class] LongestConsecutiveSequence:@[@100, @4, @200, @1, @3, @2]];
+    NSLog(@"LongestConsecutiveSequence--%d",longest);
 }
 
 
@@ -228,7 +232,45 @@ static int count = 1;
  输入: [100, 4, 200, 1, 3, 2]
  输出: 4
  解释: 最长连续序列是 [1, 2, 3, 4]。它的长度为 4。
+ 
+ https://blog.csdn.net/u013309870/article/details/70242770
  */
+
++ (int)LongestConsecutiveSequence:(NSArray *)array
+{
+    if (array.count<=1) {
+        return (int)array.count;
+    }
+    NSMutableDictionary * map = [NSMutableDictionary dictionary];
+    int longest = 0;
+    for (int i = 0; i<array.count; i++) {
+        NSNumber *temN = array[i];
+        if (!map[temN]) {
+            map[temN] = @1;
+            if (map[@([temN intValue] - 1)]) {
+                int max = [[self class] mergeLongestArray:map left:[temN intValue] - 1 right:[temN intValue]];
+                NSLog(@"1111----%d",max);
+                longest = MAX(longest, max);
+            }
+            if (map[@([temN intValue]+1)]) {
+                int max = [[self class] mergeLongestArray:map left:[temN intValue] right:[temN intValue] + 1];
+                NSLog(@"2222---%d",max);
+                longest = MAX(longest, max);
+            }
+        }
+    }
+    return longest;
+}
+
++ (int)mergeLongestArray:(NSMutableDictionary *)map left:(int)left right:(int)right
+{
+    int l = left - [map[@(left)] intValue] +1;
+    int r = right + [map[@(right)] intValue] -1;
+    int len = r - l +1;
+    map[@(l)] = @(len);
+    map[@(r)] = @(len);
+    return len;
+}
 
 /**
  7,第k个排列
