@@ -25,6 +25,11 @@
     ///[1,3,5,4,7]
     int sortLongest = [[self class] longestGrowthSequence:@[@1,@3,@5,@4,@7]];
     NSLog(@"longestGrowthSequence --- %d",sortLongest);
+    
+//    输入: nums = [4,5,6,7,0,1,2], target = 0 输出: 4
+    int target = [[self class] searchNums:@[@4,@5,@6,@7,@0,@1,@2] target:0];
+    NSLog(@"searchNums --- %d",target);
+    
 }
 
 
@@ -134,6 +139,59 @@
  输入: nums = [4,5,6,7,0,1,2], target = 3
  输出: -1
  */
+/**
+ 这道题让在旋转数组中搜索一个给定值，若存在返回坐标，若不存在返回-1。我们还是考虑二分搜索法，但是这道题的难点在于我们不知道原数组在哪旋转了，我们还是用题目中给的例子来分析，对于数组[0 1 2 4 5 6 7] 共有下列七种旋转方法：
+ 
+ 0　　1　　2　　 4　　5　　6　　7
+ 
+ 7　　0　　1　　 2　　4　　5　　6
+ 
+ 6　　7　　0　　 1　　2　　4　　5
+ 
+ 5　　6　　7　　 0　　1　　2　　4
+ 
+ 4　　5　　6　　7　　 0　　1　　2
+ 
+ 2　　4　　5　　6　　 7　　0　　1
+ 
+ 1　　2　　4　　5　 　6　　7　　0
+ 如果中间的数小于最右边的数，则右半段是有序的，若中间数大于最右边数，则左半段是有序的，我们只要在有序的半段里用首尾两个数组来判断目标值是否在这一区域内，这样就可以确定保留哪半边了
+ */
+
+int deNumber(NSArray * arr,int i) {
+    if (arr.count > i) {
+        return  [arr[i] intValue];
+    }
+    return 0;
+}
+
++ (int)searchNums:(NSArray *)nums target:(int)target
+{
+    int left=0,right=(int)nums.count-1;
+    while (left <= right) {
+        int mid = left + (right - left)/2;
+        if (target == [nums[mid] intValue]) {
+            return mid;
+        }
+        if([nums[mid] intValue] >= [nums[left] intValue]) {
+            if (deNumber(nums, left)<=target && deNumber(nums, mid)>target) {
+                right = mid-1;
+            } else {
+                left = mid+1;
+            }
+        }
+        if ([nums[mid] intValue] <= [nums[right] intValue]) {
+            if (deNumber(nums, mid)<target && deNumber(nums, right) >= target) {
+                left = mid+1;
+            } else {
+                right = mid-1;
+            }
+        }
+       
+    }
+    return -1;
+}
+
 
 /**
  4,最长连续递增序列
