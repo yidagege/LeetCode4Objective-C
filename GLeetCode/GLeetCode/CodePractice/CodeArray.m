@@ -21,6 +21,10 @@
     /// 输入: [100, 4, 200, 1, 3, 2]
     int longest = [[self class] LongestConsecutiveSequence:@[@100, @4, @200, @1, @3, @2]];
     NSLog(@"LongestConsecutiveSequence--%d",longest);
+    
+    ///[1,3,5,4,7]
+    int sortLongest = [[self class] longestGrowthSequence:@[@1,@3,@5,@4,@7]];
+    NSLog(@"longestGrowthSequence --- %d",sortLongest);
 }
 
 
@@ -150,7 +154,20 @@
  */
 + (int)longestGrowthSequence:(NSArray*)array
 {
-    return 1;
+    if (array.count<=1) {
+        return (int)array.count;
+    }
+    int longest = 0;
+    int count = 1;
+    for (int i =0; i<array.count-1; i++) {
+        if ([array[i] intValue] < [array[i+1] intValue] ) {
+            count ++;
+        } else {
+            longest = MAX(longest, count);
+            count = 1;
+        }
+    }
+    return MAX(longest, count);
 }
 
 /**
