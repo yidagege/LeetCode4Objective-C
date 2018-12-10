@@ -377,6 +377,8 @@ static int count = 1;
  
  输入: n = 4, k = 9
  输出: "2314"
+ 
+ https://www.cnblogs.com/ariel-dreamland/p/9149577.html
  */
 
 /**
