@@ -7,9 +7,22 @@
 //
 
 #import "CodeNode.h"
+#import "ListNode.h"
 
 @implementation CodeNode
 
+
++ (void)nodeTestEntrance
+{
+    ListNode * node01 = [ListNode nexts:@[@1,@2,@3,@4,@5]];
+    ListNode * node02 = [ListNode nexts:@[@1,@2,@3,@4,@5]];
+    ListNode * testNode = [ListNode nexts:@[@5,@4,@3,@2,@1]];
+    ListNode * node1 = [[self class] reverseRecursive:node01];
+    ListNode * node2 = [[self class] reverseEnums:node02];
+    if ([node1 isEqual:node2] && [node1 isEqual:testNode] && [node2 isEqual:testNode]) {
+        NSLog(@"reverseEnums");
+    }
+}
 /**
  1,合并两个有序链表
  将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
@@ -20,6 +33,30 @@
  输出：1->1->2->3->4->4
 
  */
+
++ (ListNode*) mergeTwoLists:(ListNode*)l1 and:(ListNode*)l2
+{
+    ListNode * head = [ListNode val:0];
+    ListNode * retval = head;
+    while (l1!=nil ||  l2 != nil) {
+        if (l1.val < l2.val) {
+            head.next = l1;
+            l1 = l1.next;
+        } else {
+            head.next = l2;
+            l2 = l2.next;
+        }
+        head = head.next;
+    }
+    if (l1!=nil) {
+        head.next = l1;
+    }
+    if (l2!=nil) {
+        head.next = l2;
+    }
+    
+    return retval.next;
+}
 
 /**
  2,反转链表
@@ -32,6 +69,35 @@
  进阶:
  你可以迭代或递归地反转链表。你能否用两种方法解决这道题？
  */
+
++ (ListNode*)reverseEnums:(ListNode *)node
+{
+    ListNode * head = node;
+    ListNode *pre = nil;
+    ListNode *next = nil;
+    ListNode *tail = nil;
+    while (head) {
+        next = head.next;
+        if (!next) {
+            tail = head;
+        }
+        head.next = pre;
+        pre = head;
+        head = next;
+    }
+    return tail;
+}
+
++ (ListNode*)reverseRecursive:(ListNode *)node
+{
+    if (!node || !node.next) {
+        return node;
+    }
+    ListNode * temp = [[self class] reverseRecursive:node.next];
+    node.next.next = node;
+    node.next = nil;
+    return temp;
+}
 
 /**
  3,两数相加

@@ -35,6 +35,7 @@
 #import "MinDepth_111.h"
 #import "CodeString.h"
 #import "CodeArray.h"
+#import "CodeNode.h"
 #pragma mark - Test
 /**
  01
@@ -442,6 +443,7 @@ int main(int argc, const char * argv[]) {
         
         [CodeString stringTestEntrance];
         [CodeArray arrayTestEntrance];
+        [CodeNode nodeTestEntrance];
     }
     return 0;
 }
