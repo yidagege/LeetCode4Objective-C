@@ -30,6 +30,8 @@
  返回哑结点的下一个结点。
  请注意，我们使用哑结点来简化代码。如果没有哑结点，则必须编写额外的条件语句来初始化表头的值。
  */
+
+
 + (ListNode *)addTwoNums:(ListNode *)l1 and:(ListNode *)l2
 {
     int carry = 0;
