@@ -33,15 +33,17 @@
 + (NSArray *)twoNums:(NSArray *)nums target:(NSInteger)target
 {
     NSMutableDictionary * map = [NSMutableDictionary dictionaryWithCapacity:nums.count];
-    for (int i=0; i<nums.count; i++) {
-        NSInteger diff = [nums[i] integerValue];
-        if (map[@(diff)]) {
-            return @[map[@(diff)],@(i)];
-        } else {
-            NSInteger diff_value = target - diff;
-            map[@(diff_value)] = @(i);
+    for (int i = 0; i < nums.count; i++) {
+        NSInteger value = [nums[i] intValue];
+        if (map[@(target-value)]) {
+            return @[map[@(target-value)],@(i)];
+        }else{
+            map[@(value)] = @(i);
         }
     }
     return nil;
 }
+
+
+
 @end

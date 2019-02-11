@@ -44,6 +44,12 @@
 		2BF27A5A21A7088200B628B2 /* LevelOrderBottom_107.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF27A5921A7088200B628B2 /* LevelOrderBottom_107.m */; };
 		2BF27A5D21A70E2300B628B2 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF27A5C21A70E2300B628B2 /* Stack.m */; };
 		2BF27A6021A7107400B628B2 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF27A5F21A7107400B628B2 /* Queue.m */; };
+		DF3394A5221181670081242E /* ZChange_06.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3394A4221181670081242E /* ZChange_06.m */; };
+		DF3394A82211832E0081242E /* StringToNum_08.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3394A72211832E0081242E /* StringToNum_08.m */; };
+		DF3394AB221184090081242E /* MaxArea_11.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3394AA221184090081242E /* MaxArea_11.m */; };
+		DF3394AE2211844C0081242E /* IntToRoman_12.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3394AD2211844C0081242E /* IntToRoman_12.m */; };
+		DF3394B1221184840081242E /* RomanToInt_13.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3394B0221184840081242E /* RomanToInt_13.m */; };
+		DF3394B42211852E0081242E /* ThreeSum_15.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3394B32211852E0081242E /* ThreeSum_15.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -134,6 +140,18 @@
 		2BF27A5C21A70E2300B628B2 /* Stack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		2BF27A5E21A7107400B628B2 /* Queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
 		2BF27A5F21A7107400B628B2 /* Queue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
+		DF3394A3221181670081242E /* ZChange_06.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZChange_06.h; sourceTree = "<group>"; };
+		DF3394A4221181670081242E /* ZChange_06.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZChange_06.m; sourceTree = "<group>"; };
+		DF3394A62211832E0081242E /* StringToNum_08.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringToNum_08.h; sourceTree = "<group>"; };
+		DF3394A72211832E0081242E /* StringToNum_08.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringToNum_08.m; sourceTree = "<group>"; };
+		DF3394A9221184090081242E /* MaxArea_11.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaxArea_11.h; sourceTree = "<group>"; };
+		DF3394AA221184090081242E /* MaxArea_11.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaxArea_11.m; sourceTree = "<group>"; };
+		DF3394AC2211844C0081242E /* IntToRoman_12.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntToRoman_12.h; sourceTree = "<group>"; };
+		DF3394AD2211844C0081242E /* IntToRoman_12.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntToRoman_12.m; sourceTree = "<group>"; };
+		DF3394AF221184840081242E /* RomanToInt_13.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RomanToInt_13.h; sourceTree = "<group>"; };
+		DF3394B0221184840081242E /* RomanToInt_13.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RomanToInt_13.m; sourceTree = "<group>"; };
+		DF3394B22211852E0081242E /* ThreeSum_15.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeSum_15.h; sourceTree = "<group>"; };
+		DF3394B32211852E0081242E /* ThreeSum_15.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeSum_15.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,18 +213,30 @@
 				2B3C9533219C108A00BB56F4 /* FindMedianSortedArrays_04.m */,
 				2B3C9535219C500B00BB56F4 /* LongestPalindrome_05.h */,
 				2B3C9536219C500B00BB56F4 /* LongestPalindrome_05.m */,
+				DF3394A3221181670081242E /* ZChange_06.h */,
+				DF3394A4221181670081242E /* ZChange_06.m */,
 				2B5692A7219B1A330033096D /* ReverseNum_07.h */,
 				2B5692A8219B1A330033096D /* ReverseNum_07.m */,
+				DF3394A62211832E0081242E /* StringToNum_08.h */,
+				DF3394A72211832E0081242E /* StringToNum_08.m */,
 				2B6D669F219C80A300149FEE /* Palindrome_09.h */,
 				2B6D66A0219C80A300149FEE /* Palindrome_09.m */,
-				2BCDEDA5219DC75D00B60E64 /* strStr_28.h */,
-				2BCDEDA6219DC75D00B60E64 /* strStr_28.m */,
+				DF3394A9221184090081242E /* MaxArea_11.h */,
+				DF3394AA221184090081242E /* MaxArea_11.m */,
+				DF3394AC2211844C0081242E /* IntToRoman_12.h */,
+				DF3394AD2211844C0081242E /* IntToRoman_12.m */,
+				DF3394AF221184840081242E /* RomanToInt_13.h */,
+				DF3394B0221184840081242E /* RomanToInt_13.m */,
 				2B30C05421A008570082FC3D /* LongestCommonPrefix_14.h */,
 				2B30C05521A008570082FC3D /* LongestCommonPrefix_14.m */,
+				DF3394B22211852E0081242E /* ThreeSum_15.h */,
+				DF3394B32211852E0081242E /* ThreeSum_15.m */,
 				2B30C05721A0150D0082FC3D /* MergeTwoLists_21.h */,
 				2B30C05821A0150D0082FC3D /* MergeTwoLists_21.m */,
 				2B30C05A21A0324E0082FC3D /* RemoveDuplicates_26.h */,
 				2B30C05B21A0324E0082FC3D /* RemoveDuplicates_26.m */,
+				2BCDEDA5219DC75D00B60E64 /* strStr_28.h */,
+				2BCDEDA6219DC75D00B60E64 /* strStr_28.m */,
 				2B30C05D21A03FEB0082FC3D /* SearchInsert_35.h */,
 				2B30C05E21A03FEB0082FC3D /* SearchInsert_35.m */,
 				2B30C06021A0583A0082FC3D /* MaxSubArray_53.h */,
@@ -317,17 +347,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B5692A6219B14EA0033096D /* TwoNum_01.m in Sources */,
+				DF3394A82211832E0081242E /* StringToNum_08.m in Sources */,
 				2B1C2C2221AC245800A25406 /* SortedArrayToBST_108.m in Sources */,
 				2B30C05621A008570082FC3D /* LongestCommonPrefix_14.m in Sources */,
 				2BF27A5A21A7088200B628B2 /* LevelOrderBottom_107.m in Sources */,
 				2B30C06521A05DB70082FC3D /* DivideAndConquer.m in Sources */,
 				2B529D5A21AC46220009E451 /* DynamicAndGreedy.m in Sources */,
+				DF3394AB221184090081242E /* MaxArea_11.m in Sources */,
 				2BCDEDA7219DC75D00B60E64 /* strStr_28.m in Sources */,
 				2BBDAE6221AD6E70003A2E89 /* SortArray.m in Sources */,
 				2B30C06B21A13C4B0082FC3D /* PlusOne_66.m in Sources */,
+				DF3394B42211852E0081242E /* ThreeSum_15.m in Sources */,
 				2B936B0121A42B5F00C2B9D6 /* TreeNode.m in Sources */,
 				2BF27A6021A7107400B628B2 /* Queue.m in Sources */,
 				2B5692AC219B1FB00033096D /* AddTwoNumbers_02.m in Sources */,
+				DF3394AE2211844C0081242E /* IntToRoman_12.m in Sources */,
 				2BF27A5D21A70E2300B628B2 /* Stack.m in Sources */,
 				2B3C9534219C108A00BB56F4 /* FindMedianSortedArrays_04.m in Sources */,
 				2B56929E219B14870033096D /* main.m in Sources */,
@@ -340,12 +374,14 @@
 				2B529D5721AC44CB0009E451 /* CodeNode.m in Sources */,
 				2B3C9537219C500B00BB56F4 /* LongestPalindrome_05.m in Sources */,
 				2B3C9531219BF76D00BB56F4 /* LongestSubstring_03.m in Sources */,
+				DF3394A5221181670081242E /* ZChange_06.m in Sources */,
 				2B1C2C2821AC2B2D00A25406 /* MinDepth_111.m in Sources */,
 				2B936AFE21A42AC300C2B9D6 /* IsSameTree_100.m in Sources */,
 				2B936AF521A2E5A800C2B9D6 /* ClimbStairs_70.m in Sources */,
 				2B30C05921A0150D0082FC3D /* MergeTwoLists_21.m in Sources */,
 				2B30C07121A194840082FC3D /* MySqrt_69.m in Sources */,
 				2B30C05F21A03FEB0082FC3D /* SearchInsert_35.m in Sources */,
+				DF3394B1221184840081242E /* RomanToInt_13.m in Sources */,
 				2B5692AF219B240C0033096D /* ListNode.m in Sources */,
 				2B5692A9219B1A330033096D /* ReverseNum_07.m in Sources */,
 				2B6D66A1219C80A300149FEE /* Palindrome_09.m in Sources */,
