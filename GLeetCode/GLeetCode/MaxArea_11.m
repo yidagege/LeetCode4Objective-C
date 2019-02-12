@@ -30,4 +30,19 @@
  输出: 49
  */
 
++ (NSInteger)MaxArea:(NSArray *)datas{
+    NSInteger maxarea = 0, l = 0;
+    NSInteger r = datas.count - 1;
+    while (l<r) {
+        maxarea = MAX(maxarea, (r - l) * MIN([datas[l] integerValue],[datas[r] integerValue]));
+        if ([datas[l] integerValue] < [datas[r] integerValue]) {
+            l++;
+        }else{
+            r--;
+        }
+    }
+    return maxarea;
+}
+
+
 @end

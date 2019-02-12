@@ -38,6 +38,9 @@
 #import "CodeNode.h"
 #import "ZChange_06.h"
 #import "StringToNum_08.h"
+#import "MaxArea_11.h"
+#import "IntToRoman_12.h"
+#import "RomanToInt_13.h"
 
 #pragma mark - Test
 /**
@@ -159,6 +162,7 @@ void StringToNum(){
 }
 
 /**
+ 09
  输入: 121
  输出: true
  示例 2:
@@ -181,6 +185,38 @@ void Palindrome(){
     }
 }
 
+/**
+ 11
+ 输入: [1,8,6,2,5,4,8,3,7]
+ 输出: 49
+ */
+void MaxArea(){
+    NSArray *data = @[@1,@8,@6,@2,@5,@4,@8,@3,@7];
+    NSInteger val = [MaxArea_11 MaxArea:data];
+    NSLog(@"MaxArea_11 success");
+}
+
+/**
+ 12
+ 输入: 129
+ 输出:CXXIX
+ */
+void IntToRoman(){
+    NSInteger val = 12190;
+    NSString *rel = [IntToRoman_12 IntToRoman:val];
+    NSLog(@"IntToRoman_12 success");
+}
+
+/**
+ 13
+ 输入: CXXIX
+ 输出:129
+ */
+void RomanToInt(){
+    NSString* val = @"CXXIX";
+    NSInteger rel = [RomanToInt_13 RomanToInt:val];
+    NSLog(@"RomanToInt_13 success");
+}
 /**
  示例 1:
  输入: haystack = "hello", needle = "ll"
@@ -445,6 +481,9 @@ int main(int argc, const char * argv[]) {
         ReverseNum();
         StringToNum();
         Palindrome();
+        MaxArea();
+        IntToRoman();
+        RomanToInt();
         strStr();
         LongestCommonPrefix();
         MergeTwoLists();

@@ -59,6 +59,7 @@ NS_ASSUME_NONNULL_BEGIN
  解释: M = 1000, CM = 900, XC = 90, IV = 4.
  */
 
++ (NSInteger)RomanToInt:(NSString *)str;
 @end
 
 NS_ASSUME_NONNULL_END

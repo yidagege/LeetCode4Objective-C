@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MaxArea_11 : NSObject
 
++ (NSInteger)MaxArea:(NSArray *)datas;
+
 @end
 
 NS_ASSUME_NONNULL_END

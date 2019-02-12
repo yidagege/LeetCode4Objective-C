@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ThreeSum_15 : NSObject
 
++ (NSArray *)ThreeSum:(NSArray *)sum;
+
 @end
 
 NS_ASSUME_NONNULL_END
