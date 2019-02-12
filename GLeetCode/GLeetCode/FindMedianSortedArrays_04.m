@@ -182,5 +182,5 @@
     }
     return (MAX(l1, l2));
 }
-//+ (float)findTopK:(NSUInteger)topK sortedArrays:(NSArray *)arrA and:(NSArray *)arrB;
+
 @end

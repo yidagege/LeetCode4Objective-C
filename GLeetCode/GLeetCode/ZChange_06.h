@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
  T     S     G
  */
 
-- (NSString *)zConvert:(NSInteger)lines origin:(NSString *)origin;
++ (NSString *)zConvert:(NSInteger)numRows origin:(NSString *)origin;
 
 @end
 

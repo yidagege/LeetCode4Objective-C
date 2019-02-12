@@ -36,6 +36,9 @@
 #import "CodeString.h"
 #import "CodeArray.h"
 #import "CodeNode.h"
+#import "ZChange_06.h"
+#import "StringToNum_08.h"
+
 #pragma mark - Test
 /**
  01
@@ -97,7 +100,7 @@ void LongestSubstring(){
  */
 void FindMedianSortedArrays(){
     NSArray * A = @[@2,@6,@23];
-    NSArray * B =@[@3,@4,@(9)];
+    NSArray * B =@[@3,@4,@9];
     float lo = [FindMedianSortedArrays_04 findMedianSortedArrays:A and:B];
     float temp = [FindMedianSortedArrays_04 findTopK:4 sortedArrays:A and:B];
     if (lo == 5) {
@@ -121,6 +124,17 @@ void LongestPalindrome(){
 }
 
 /**
+ 06
+ 输入: "LEETCODEISHIRING" ,3
+ 输出: "LCIRETOESIIGEDHN"
+ */
+void zConvert(){
+    NSString *origin = @"LEETCODEISHIRING";NSInteger numRows = 3;
+    NSString * string2 = [ZChange_06 zConvert:numRows origin:origin];
+    NSLog(@"string");
+}
+
+/**
  07
  输入: 123
  输出: 321
@@ -133,6 +147,17 @@ void ReverseNum(){
         assert(false);
     }
 }
+
+/**
+ 08
+ 输入: -123
+ */
+void StringToNum(){
+    NSString *str = @"-2147483648";//@"-91283472332";//@"4193 with words";
+    int val = [StringToNum_08 StringToNum:str];
+    NSLog(@"StringToNum success");
+}
+
 /**
  输入: 121
  输出: true
@@ -148,7 +173,7 @@ void ReverseNum(){
  解释: 从右向左读, 为 01 。因此它不是一个回文数。
  */
 void Palindrome(){
-    BOOL tf = [Palindrome_09 isPalindrome:121121];
+    BOOL tf = [Palindrome_09 isPalindrome:1210121];
     if (tf) {
         NSLog(@"Palindrome_09 success");
     } else {
@@ -416,7 +441,9 @@ int main(int argc, const char * argv[]) {
         LongestSubstring();
         FindMedianSortedArrays();
 //        LongestPalindrome();
+        zConvert();
         ReverseNum();
+        StringToNum();
         Palindrome();
         strStr();
         LongestCommonPrefix();
