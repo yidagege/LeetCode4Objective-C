@@ -50,6 +50,8 @@
 		DF3394AE2211844C0081242E /* IntToRoman_12.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3394AD2211844C0081242E /* IntToRoman_12.m */; };
 		DF3394B1221184840081242E /* RomanToInt_13.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3394B0221184840081242E /* RomanToInt_13.m */; };
 		DF3394B42211852E0081242E /* ThreeSum_15.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3394B32211852E0081242E /* ThreeSum_15.m */; };
+		DFBCFC7122154F580032B253 /* threeSumClosest_16.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBCFC7022154F580032B253 /* threeSumClosest_16.m */; };
+		DFBCFC742215501D0032B253 /* letterCombinations_17.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBCFC732215501D0032B253 /* letterCombinations_17.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -152,6 +154,10 @@
 		DF3394B0221184840081242E /* RomanToInt_13.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RomanToInt_13.m; sourceTree = "<group>"; };
 		DF3394B22211852E0081242E /* ThreeSum_15.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeSum_15.h; sourceTree = "<group>"; };
 		DF3394B32211852E0081242E /* ThreeSum_15.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeSum_15.m; sourceTree = "<group>"; };
+		DFBCFC6F22154F580032B253 /* threeSumClosest_16.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = threeSumClosest_16.h; sourceTree = "<group>"; };
+		DFBCFC7022154F580032B253 /* threeSumClosest_16.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = threeSumClosest_16.m; sourceTree = "<group>"; };
+		DFBCFC722215501D0032B253 /* letterCombinations_17.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = letterCombinations_17.h; sourceTree = "<group>"; };
+		DFBCFC732215501D0032B253 /* letterCombinations_17.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = letterCombinations_17.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +237,10 @@
 				2B30C05521A008570082FC3D /* LongestCommonPrefix_14.m */,
 				DF3394B22211852E0081242E /* ThreeSum_15.h */,
 				DF3394B32211852E0081242E /* ThreeSum_15.m */,
+				DFBCFC6F22154F580032B253 /* threeSumClosest_16.h */,
+				DFBCFC7022154F580032B253 /* threeSumClosest_16.m */,
+				DFBCFC722215501D0032B253 /* letterCombinations_17.h */,
+				DFBCFC732215501D0032B253 /* letterCombinations_17.m */,
 				2B30C05721A0150D0082FC3D /* MergeTwoLists_21.h */,
 				2B30C05821A0150D0082FC3D /* MergeTwoLists_21.m */,
 				2B30C05A21A0324E0082FC3D /* RemoveDuplicates_26.h */,
@@ -351,8 +361,10 @@
 				2B1C2C2221AC245800A25406 /* SortedArrayToBST_108.m in Sources */,
 				2B30C05621A008570082FC3D /* LongestCommonPrefix_14.m in Sources */,
 				2BF27A5A21A7088200B628B2 /* LevelOrderBottom_107.m in Sources */,
+				DFBCFC742215501D0032B253 /* letterCombinations_17.m in Sources */,
 				2B30C06521A05DB70082FC3D /* DivideAndConquer.m in Sources */,
 				2B529D5A21AC46220009E451 /* DynamicAndGreedy.m in Sources */,
+				DFBCFC7122154F580032B253 /* threeSumClosest_16.m in Sources */,
 				DF3394AB221184090081242E /* MaxArea_11.m in Sources */,
 				2BCDEDA7219DC75D00B60E64 /* strStr_28.m in Sources */,
 				2BBDAE6221AD6E70003A2E89 /* SortArray.m in Sources */,

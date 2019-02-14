@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ThreeSum_15 : NSObject
 
-+ (NSArray *)ThreeSum:(NSArray *)sum;
++ (NSMutableSet *)ThreeSum:(NSArray *)sum;
 
 @end
 

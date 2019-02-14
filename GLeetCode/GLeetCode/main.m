@@ -41,6 +41,8 @@
 #import "MaxArea_11.h"
 #import "IntToRoman_12.h"
 #import "RomanToInt_13.h"
+#import "ThreeSum_15.h"
+#import "threeSumClosest_16.h"
 
 #pragma mark - Test
 /**
@@ -217,25 +219,9 @@ void RomanToInt(){
     NSInteger rel = [RomanToInt_13 RomanToInt:val];
     NSLog(@"RomanToInt_13 success");
 }
-/**
- 示例 1:
- 输入: haystack = "hello", needle = "ll"
- 输出: 2
- 示例 2:
- 输入: haystack = "aaaaa", needle = "bba"
- 输出: -1
- */
-void strStr(){
-    int loc = [strStr_28 str:@"hello" Str:@"ll"];
-    if (loc == 2) {
-        NSLog(@"strStr_28 success");
-    } else {
-        assert(false);
-    }
-}
-
 
 /**
+ 14
  输入: ["flower","flow","flight"]
  输出: "fl"
  示例 2:
@@ -248,6 +234,47 @@ void LongestCommonPrefix() {
     NSString * str = [LongestCommonPrefix_14 longestCommonPrefix:@[@"flower",@"flow",@"flight"]];
     if ([str isEqualToString:@"fl"]) {
         NSLog(@"LongestCommonPrefix_14 success");
+    } else {
+        assert(false);
+    }
+}
+
+/**
+ 15
+ 输入: @[@1,@2,@-1,@0,@-2]
+ 输出:
+ */
+void ThreeSum(){
+    NSArray *sum = @[@1,@2,@-1,@0,@-2];
+    NSMutableSet *re = [ThreeSum_15 ThreeSum:sum];
+    NSLog(@"ThreeSum_15 success");
+}
+
+/**
+ 16
+ 输入: @[@1,@2,@-1,@0,@-2],target0
+ 输出:
+ */
+void threeSumClosest(){
+    NSArray *sum = @[@1,@2,@-1,@0,@-2];
+    NSInteger tar = 2;
+    NSInteger re = [threeSumClosest_16 threeSumClosest:sum target:tar];
+    NSLog(@"threeSumClosest success");
+
+}
+
+/**
+ 示例 1:
+ 输入: haystack = "hello", needle = "ll"
+ 输出: 2
+ 示例 2:
+ 输入: haystack = "aaaaa", needle = "bba"
+ 输出: -1
+ */
+void strStr(){
+    int loc = [strStr_28 str:@"hello" Str:@"ll"];
+    if (loc == 2) {
+        NSLog(@"strStr_28 success");
     } else {
         assert(false);
     }
@@ -486,6 +513,8 @@ int main(int argc, const char * argv[]) {
         RomanToInt();
         strStr();
         LongestCommonPrefix();
+        ThreeSum();
+        threeSumClosest();
         MergeTwoLists();
         RemoveDuplicates();
         SearchInsert();
