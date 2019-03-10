@@ -34,4 +34,16 @@
     return n1+n2;
 }
 
++ (int)kclimb:(int)n{
+    if (n == 1) {
+        return 1;
+    }
+    if (n == 2) {
+        return 2;
+    }
+    int n1 = [self kclimb:n-1];
+    int n2 = [self kclimb:n-2];
+    return n1+n2;
+}
+
 @end

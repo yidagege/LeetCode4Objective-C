@@ -20,4 +20,16 @@
     }
     return depth;
 }
+
++ (int)kminD:(TreeNode *)treeNode{
+    int dep = 0;
+    if (treeNode) {
+        int minleft = [self kminD:treeNode.left];
+        int minright = [self kminD:treeNode.right];
+        return 1+ MIN(minleft, minright);
+    }
+    return dep;
+}
+
+
 @end

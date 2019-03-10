@@ -72,20 +72,25 @@
 
 + (ListNode*)reverseEnums:(ListNode *)node
 {
-    ListNode * head = node;
     ListNode *pre = nil;
     ListNode *next = nil;
-    ListNode *tail = nil;
-    while (head) {
-        next = head.next;
-        if (!next) {
-            tail = head;
-        }
-        head.next = pre;
-        pre = head;
-        head = next;
+    while (node != nil) {
+        next = node.next;
+        node.next = pre;
+        pre = node;
+        node = next;
     }
-    return tail;
+    return pre;
+    
+    ListNode *new = nil;
+    ListNode *knext = nil;
+    while (node) {
+        knext = node.next;
+        node.next = new;
+        new = node;
+        node = knext;
+    }
+    return new;
 }
 
 + (ListNode*)reverseRecursive:(ListNode *)node

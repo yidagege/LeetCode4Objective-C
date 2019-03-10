@@ -26,7 +26,9 @@
     NSMutableString * retval = [NSMutableString new];
     for (int i = len-1 ; i >=0; i--) {
         int tempA = [[str1 substringWithRange:NSMakeRange(i, 1)] intValue];
-        int tempB = (i<str2.length)?[[str2 substringWithRange:NSMakeRange(i, 1)] intValue] : 0;
+//        int tempB = (i<str2.length)?[[str2 substringWithRange:NSMakeRange(i, 1)] intValue] : 0;
+        int tempB = (len - (i+1) < str2.length) ? [[str2 substringWithRange:NSMakeRange(len - (i+1), 1)] intValue] : 0;
+
         int val = (tempA+tempB+carry)%2;
         carry = (tempA+tempB+carry)/2;
         [retval insertString:[NSString stringWithFormat:@"%d",val] atIndex:0];
@@ -35,6 +37,27 @@
         [retval insertString:@"1" atIndex:0];
     }
     return retval.copy;
+}
+
++ (NSString *)kaddBinary:(NSString *)str1 and:(NSString *)str2{
+    if (str1.length < str2.length) {
+        return [self kaddBinary:str2 and:str1];
+    }
+    int len = str1.length;
+    int carry = 0;//管理进位
+    NSMutableString *retval = [NSMutableString new];
+    for (int i = len-1; i>=0; i--) {
+        int tempa = [[str1 substringWithRange:NSMakeRange(i, 1)] intValue];
+        int tempb = (len - (i+1) < str2.length) ? [[str2 substringWithRange:NSMakeRange(len - (i+1), 1)] intValue] : 0;
+        int val = (tempa + tempb +carry) % 2;//取余
+        carry = (tempa + tempb + carry) / 2;//取倍数
+        [retval insertString:[NSString stringWithFormat:@"%zd",val] atIndex:0];
+    }
+    if (carry == 1) {
+        [retval insertString:@"1" atIndex:0];
+    }
+    
+    return retval;
 }
 
 @end

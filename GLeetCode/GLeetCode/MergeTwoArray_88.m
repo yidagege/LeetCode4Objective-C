@@ -18,45 +18,36 @@
  你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。
  */
 + (void)mergeTwoArray:(NSMutableArray*)arr1 and:(NSArray*)arr2
-{
-    int index1 = (int)arr1.count-1;
-    int temp = (int)arr1.count;
-    int index2 = (int)arr2.count-1;
-    int indexN = (int)arr1.count+(int)arr2.count-1;
-    while (index1 >= 0 && index2 >= 0) {
-        if ([arr1[index1] intValue]>[arr2[index2] intValue]) {
-            if (arr1.count - index1 == 1 ) {
-                [arr1 addObject:arr1[index1]];
-            } else {
-                id obj = arr1[index1] ;
-                [arr1 removeObjectAtIndex:index1];
-                [arr1 insertObject:obj atIndex:arr1.count-(arr1.count - temp)];
-                
-            }
-            indexN -- ;
-            index1 --;
-        } else {
-            if (arr1.count - index1 == 1 ) {
-                [arr1 addObject:arr2[index2]];
-            } else {
-                [arr1 insertObject:arr2[index2] atIndex:arr1.count-(arr1.count - temp)];
-            }
-            
-            indexN -- ;
-            index2 --;
-//            arr1[indexN--] = arr2[index2--];
+{    
+    NSMutableArray* res = [[NSMutableArray alloc]initWithCapacity:(arr1.count + arr2.count)];
+    // i 标识 arr1数组, j 标识 arr2数组 , k标识res数组
+    int i = 0, j = 0, k = 0;
+    while (i < arr1.count && j < arr2.count) { //数组长度作为条件
+        if ([arr1[i] integerValue] > [arr2[j] integerValue])
+        {
+            res[k++] = arr2[j++];
+        }
+        else {
+            res[k++] = arr1[i++];
         }
     }
-    while (index2 >= 0) {
-        
-        if (arr1.count - index1 == 1 ) {
-            [arr1 addObject:arr2[index2]];
-        } else {
-            [arr1 insertObject:arr2[index2] atIndex:indexN];
-        }
-        indexN -- ;
-        index2 --;
+    while(i < arr1.count)
+    {
+        res[k++] = arr1[i++];
+    }
+    while(j < arr2.count)
+    {
+        res[k++] = arr2[j++];
+    }
+    NSLog(@"%@",res);
+    [arr1 removeAllObjects];
+    for (NSNumber *num in res) {
+        [arr1 addObject:num];
     }
 
 }
+
+
+
+
 @end

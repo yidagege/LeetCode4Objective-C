@@ -23,11 +23,12 @@ NS_ASSUME_NONNULL_BEGIN
  
  一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树：
  
- 0
- / \
- -3   9
- /   /
- -10  5
+    0
+  /   \
+ -3    9
+ /    /
+-10   5
+ 
  */
 + (TreeNode *)sortedArrayToBST:(NSArray *)nums;
 @end

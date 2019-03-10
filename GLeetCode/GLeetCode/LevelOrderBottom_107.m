@@ -93,5 +93,32 @@
     }
 }
 
++ (NSArray *)levelOrder:(TreeNode *)node{
+    NSMutableArray *ret = [NSMutableArray new];
+    if (node) {
+        NSMutableArray *tmp = [NSMutableArray new];
+        [tmp addObject:@(node.val)];
+        [ret addObject:tmp];
+        [self ktraverse:ret treeNode:node.left level:1];
+        [self ktraverse:ret treeNode:node.right level:1];
+    }
+    return ret.copy;
+}
+
++ (void)ktraverse:(NSMutableArray *)array treeNode:(TreeNode *)node level:(int)level{
+    NSMutableArray *tmp = nil;
+    if (node) {
+        if (level == array.count) {
+            tmp = [NSMutableArray new];
+            [array addObject:tmp];
+        }else{
+            tmp = array[level];
+        }
+        [tmp addObject:@(node.val)];
+        [self ktraverse:array treeNode:node.left level:level+1];
+        [self ktraverse:array treeNode:node.right level:level+1];
+    }
+}
+
 
 @end

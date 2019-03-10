@@ -75,7 +75,7 @@
         }
         if (2*i+2<=n-1){
             TreeNode * p = treesM[i];
-            TreeNode *temp = treesM[2*i+2]; //把第2*i+1个结点的地址赋给右孩子
+            TreeNode *temp = treesM[2*i+2]; //把第2*i+2个结点的地址赋给右孩子
             if (temp.val != -1) {
                 p.right = temp;
             }

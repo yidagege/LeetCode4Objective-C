@@ -27,6 +27,22 @@
     return right - 1;
 }
 
++(int)mySqrt2:(int)x{
+    if (x<=1) {
+        return x;
+    }
+    int left = 0,right = x;
+    while (left < right) {
+        int mid = left + (right - left)/2;
+        if (x/mid >= mid) {
+            left = mid + 1;
+        }else{
+            right = mid;
+        }
+    }
+    return right - 1;
+}
+
 /**
  牛顿迭代法
  http://www.cnblogs.com/AnnieKim/archive/2013/04/18/3028607.html
@@ -45,4 +61,6 @@
         }
     return (int)res;
 }
+
+
 @end

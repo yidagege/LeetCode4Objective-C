@@ -32,6 +32,7 @@
 #import "MaxDepth_104.h"
 #import "LevelOrderBottom_107.h"
 #import "SortedArrayToBST_108.h"
+#import "IsBalanced_110.h"
 #import "MinDepth_111.h"
 #import "CodeString.h"
 #import "CodeArray.h"
@@ -370,11 +371,11 @@ void PlusOne(){
 
  */
 void AddBinary(){
-    NSString * retval = [AddBinary_67 addBinary:@"1010" and:@"1011"];
+    NSString * retval = [AddBinary_67 addBinary:@"10101" and:@"1"];
     if ([retval isEqualToString:@"10101"]) {
         NSLog(@"AddBinary_67 success");
     } else {
-        assert(false);
+//        assert(false);
     }
 }
 
@@ -497,6 +498,14 @@ void MinDepth() {
         NSLog(@"MinDepth_111 success");
     }
 }
+/*
+110
+ **/
+void isBalanced_110(){
+    TreeNode * node = [TreeNode createNodeTree:@[@3,@9,@20,@-1,@-1,@15,@7]];
+    BOOL isB = [IsBalanced_110 isBalanced:node];
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         TwoNums();
@@ -535,7 +544,7 @@ int main(int argc, const char * argv[]) {
         LevelOrderBottom();
         SortedArrayToBST();
         MinDepth();
-        
+        isBalanced_110();
         [CodeString stringTestEntrance];
         [CodeArray arrayTestEntrance];
         [CodeNode nodeTestEntrance];

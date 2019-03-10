@@ -54,5 +54,21 @@
     return node;
 }
 
++ (TreeNode *)ksortedArrToBst:(NSArray *)nums{
+    int left = 0;
+    int right = nums.count - 1;
+    return [self ksortedMidToBST:nums left:left right:right];
+}
+
++ (TreeNode *)ksortedMidToBST:(NSArray *)array left:(int)left right:(int)right{
+    if (left>right) {
+        return nil;
+    }
+    int mid = (left + right)/2;
+    TreeNode *node = [TreeNode val:[array[mid] intValue]];
+    node.left = [self ksortedMidToBST:array left:left right:mid-1];
+    node.right = [self ksortedMidToBST:array left:mid+1 right:right];
+    return node;
+}
 
 @end

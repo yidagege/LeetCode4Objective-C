@@ -26,4 +26,21 @@
     }
     return  [IsSameTree_100 isSameTree:p.left and:q.left] &&  [IsSameTree_100 isSameTree:p.right and:q.right];
 }
+
++ (BOOL)isTheSame:(TreeNode *)p and:(TreeNode *)q{
+    if (!p && !q) {
+        return YES;
+    }
+    if (!p && q) {
+        return NO;
+    }
+    if (p&&!q) {
+        return NO;
+    }
+    if (p.val != q.val) {
+        return NO;
+    }
+    return [self isTheSame:p.left and:q.left] && [self isTheSame:p.right and:q.right];
+}
+
 @end

@@ -36,6 +36,15 @@
     if (root) {
         return 1 + MAX([MaxDepth_104 maxDepth:root.left], [MaxDepth_104 maxDepth:root.right]);
     }
+
     return depth;
 }
+
++ (int)maxD:(TreeNode *)root{
+    if (root) {
+        return 1+MAX([self maxD:root.left], [self maxD:root.right]);
+    }
+    return 0;
+}
+
 @end
