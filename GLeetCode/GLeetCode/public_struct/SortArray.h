@@ -2,7 +2,7 @@
 //  SortArray.h
 //  GLeetCode
 //
-//  Created by GIKI on 2018/11/27.
+//  Created by 张毅 on 2018/11/1.
 //  Copyright © 2018 GIKI. All rights reserved.
 //
 

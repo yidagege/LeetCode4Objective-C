@@ -2,7 +2,7 @@
 //  IsSameTree_100.h
 //  GLeetCode
 //
-//  Created by GIKI on 2018/11/20.
+//  Created by 张毅 on 2018/10/1.
 //  Copyright © 2018年 GIKI. All rights reserved.
 //
 

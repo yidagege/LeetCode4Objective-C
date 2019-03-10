@@ -2,7 +2,7 @@
 //  DeleteDuplicates_83.m
 //  GLeetCode
 //
-//  Created by GIKI on 2018/11/19.
+//  Created by 张毅 on 2018/10/1.
 //  Copyright © 2018年 GIKI. All rights reserved.
 //
 
