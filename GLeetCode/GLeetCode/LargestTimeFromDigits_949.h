@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 @interface LargestTimeFromDigits_949 : NSObject
++ (NSString *)largestTimeFromDigits:(NSArray *)nums;
 
 @end
 

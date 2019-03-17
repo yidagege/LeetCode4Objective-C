@@ -45,6 +45,8 @@
 #import "ThreeSum_15.h"
 #import "threeSumClosest_16.h"
 
+#import "LargestTimeFromDigits_949.h"
+
 #pragma mark - Test
 /**
  01
@@ -491,6 +493,16 @@ void SortedArrayToBST(){
     NSLog(@"SortedArrayToBST success");
 }
 
+/*
+ 110
+ **/
+void isBalanced_110(){
+    TreeNode * node = [TreeNode createNodeTree:@[@3,@9,@20,@-1,@-1,@15,@7]];
+    BOOL isB = [IsBalanced_110 isBalanced:node];
+}
+/**
+111
+*/
 void MinDepth() {
     TreeNode * node = [TreeNode createNodeTree:@[@3,@9,@20,@-1,@-1,@15,@7]];
     int depth = [MinDepth_111 minDepth:node];
@@ -498,13 +510,17 @@ void MinDepth() {
         NSLog(@"MinDepth_111 success");
     }
 }
+
+
 /*
-110
- **/
-void isBalanced_110(){
-    TreeNode * node = [TreeNode createNodeTree:@[@3,@9,@20,@-1,@-1,@15,@7]];
-    BOOL isB = [IsBalanced_110 isBalanced:node];
+949
+*/
+void LargestTimeFromDigits949() {
+    NSArray *arr = @[@"5",@"8",@"3",@"1"];
+    NSString *ttt = [LargestTimeFromDigits_949 largestTimeFromDigits:arr];
+    NSLog(@"LargestTimeFromDigits_949 success");
 }
+
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -545,6 +561,8 @@ int main(int argc, const char * argv[]) {
         SortedArrayToBST();
         MinDepth();
         isBalanced_110();
+        
+        LargestTimeFromDigits949();
         [CodeString stringTestEntrance];
         [CodeArray arrayTestEntrance];
         [CodeNode nodeTestEntrance];

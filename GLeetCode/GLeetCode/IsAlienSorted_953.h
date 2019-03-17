@@ -30,10 +30,15 @@
  输入：words = ["apple","app"], order = "abcdefghijklmnopqrstuvwxyz"
  输出：false
  解释：当前三个字符 "app" 匹配时，第二个字符串相对短一些，然后根据词典编纂规则 "apple" > "app"，因为 'l' > '∅'，其中 '∅' 是空白字符，定义为比任何其他字符都小（更多信息）。
+ 
+ 
+ 整体思路是不断拿两个单词进行比较，如果这两个单词顺序错误，就直接返回false，若正确，在拿第二个单词和后面一个单词进行比较，依次进行，直到比较完，当比较完还未出现顺序错误时就返回 ture。
  */
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IsAlienSorted_953 : NSObject
++ (BOOL)compareWord1AndWord2:(NSString *)word1 word2:(NSString *)word2 oder:(NSString *)order;
+
 
 @end
 
