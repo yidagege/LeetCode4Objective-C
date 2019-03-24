@@ -25,6 +25,9 @@
 
 /**
  Notes:https://blog.csdn.net/hk2291976/article/details/51107886
+ 
+ https://blog.csdn.net/qq_32354501/article/details/80084325
+ https://www.cnblogs.com/grandyang/p/4475985.html
  */
 + (NSString *)longestPalindrome2:(NSString *)string
 {
@@ -72,50 +75,75 @@
     return retval;
 }
 
-static int left, right,length;
-+ (NSString *)longestPalindrome: (NSString *)s {
-    left = right = length = 0;
++ (NSString *)longestPalindrome: (NSString *)s {//时间复杂度n*n
     if (s.length == 0) return s;
+    NSInteger len = s.length;
+    NSInteger maxlen = 1;
+    NSInteger start = 0;
+    if (len % 2 == 1) {
+        for(int i = 0; i < len; i++)//求长度为奇数的回文串
+        {
+            int j = i - 1, k = i + 1;
+            while(j >= 0 && k < len && [s characterAtIndex:j] == [s characterAtIndex:k])
+            {
+                if(k - j + 1 > maxlen)
+                {
+                    maxlen = k - j + 1;
+                    start = j;
+                }
+                j--;
+                k++;
+            }
+        }
+    }else{
+        for(int i = 0; i < len; i++)//求长度为偶数的回文串
+        {
+            int j = i, k = i + 1;
+            while(j >= 0 && k < len && [s characterAtIndex:j] == [s characterAtIndex:k])
+            {
+                if(k - j + 1 > maxlen)
+                {
+                    maxlen = k - j + 1;
+                    start = j;
+                }
+                j--;
+                k++;
+            }
+        }
+    }
+    return [s substringWithRange:NSMakeRange(start, maxlen)];
+}
+
+//@"$#1#2#2#1#2#2#",Manacher's Algorithm 马拉车算法
++ (NSString *)longestPalindrome3:(NSString *)s{
+    NSMutableString *str = [[NSMutableString alloc]initWithString:@"$#"];
     for (int i = 0; i < s.length; i++) {
-        //Need to check odd length and even length palindrome string
-        [LongestPalindrome_05 palindromeHelper:s left:i right:i];
-        [LongestPalindrome_05 palindromeHelper:s left:i right:i + 1];
+        [str appendString:[NSString stringWithFormat:@"%@%@",[s substringWithRange:NSMakeRange(i, 1)],@"#"]];
     }
-    return [s substringWithRange:NSMakeRange(left, right - left + 1)];
+
+    NSMutableArray *p = [NSMutableArray new];
+    for (NSInteger i = 0; i < str.length; i ++) {
+        [p addObject:@(1)];
+    }
+    NSInteger mx = 0, kid = 0, resLen = 0, resCenter = 0;
+    for (int i = 1; i < str.length; ++i) {
+        NSInteger kk = (2 * kid - i >= 0 && 2 * kid - i < p.count) ? [p[2 * kid - i] integerValue] : 0;
+        p[i] = mx > i ? @(MIN(kk, mx - i)) : @(1);
+        
+        while (i - [p[i] integerValue] >= 0 && i + [p[i] integerValue] < p.count && [[str substringWithRange:NSMakeRange(i + [p[i] integerValue], 1)] isEqualToString:[str substringWithRange:NSMakeRange(i - [p[i] integerValue], 1)]]) {
+            p[i] = @([p[i] integerValue] + 1);
+        }
+        if (mx < i + [p[i] integerValue]) {
+            mx = i + [p[i] integerValue];
+            kid = i;
+        }
+        if (resLen < [p[i] integerValue]) {
+            resLen = [p[i] integerValue];
+            resCenter = i;
+        }
+    }
+    return [s substringWithRange:NSMakeRange((resCenter - resLen) / 2, resLen - 1)];
 }
 
-+ (void)palindromeHelper: (NSString *)s left: (int)l right: (int)r {
-    while (l >= 0 && r < s.length && [s characterAtIndex:l] == [s characterAtIndex:r]) {
-        l--;
-        r++;
-    }
-    if (r - l - 1 > length) {
-        left = l;
-        right = r;
-        length = r - l - 1;
-    }
-}
 
-
-- (NSString *)longestPalindrome: (NSString *)s {
-    if (s.length == 0) return s;
-    for (int i = 0; i < s.length; i++) {
-        //Need to check odd length and even length palindrome string
-        [self palindromeHelper:s left:i right:i];
-        [self palindromeHelper:s left:i right:i + 1];
-    }
-    return [s substringWithRange:NSMakeRange(self.left, self.right - self.left + 1)];
-}
-
-- (void)palindromeHelper: (NSString *)s left: (NSInteger)l right: (NSInteger)r {
-    while (l >= 0 && r < s.length && [s characterAtIndex:l] == [s characterAtIndex:r]) {
-        l--;
-        r++;
-    }
-    if (r - l - 1 > self.len) {
-        self.left = l;
-        self.right = r;
-        self.len = r - l - 1;
-    }
-}
 @end

@@ -394,4 +394,32 @@ BOOL isValid(NSString * s)
     DFS(array, t, string, 0);
     return array.copy;
 }
+
+/**
+https://blog.csdn.net/TuZiFaDai/article/details/72084956
+ 棋盘路径问题。走格子/棋盘问题 有多少条路径可走,m*n的格子
+*/
++ (NSInteger)cubeStep:(NSInteger)m and:(NSInteger)n
+{
+    if (m > 1 && n > 1)
+    {
+        return [self cubeStep:m and:n-1] && [self cubeStep:m-1 and:n];
+    }
+    else if ((m == 0) && (n>1))
+    {
+        return [self cubeStep:m and:n-1];
+    }
+    else if ((n == 0) && (m>1))
+    {
+        return [self cubeStep:m-1 and:n];
+    }
+    else if ((m == 0 && n == 1) || (m == 1 && n == 0))
+    {
+        return 1;
+    }
+    else
+        return 0;
+}
+
+
 @end

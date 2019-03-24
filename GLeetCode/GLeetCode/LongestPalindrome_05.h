@@ -11,9 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LongestPalindrome_05 : NSObject
-@property (nonatomic, assign) NSInteger left;
-@property (nonatomic, assign) NSInteger right;
-@property (nonatomic, assign) NSInteger len;
 /**
  给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为1000。
  
@@ -28,7 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
  输出: "bb"
  */
 + (NSString *)longestPalindrome:(NSString *)string;
-- (NSString *)longestPalindrome:(NSString *)string;
++ (NSString *)longestPalindrome2:(NSString *)string;
++ (NSString *)longestPalindrome3:(NSString *)s;
 @end
 
 NS_ASSUME_NONNULL_END

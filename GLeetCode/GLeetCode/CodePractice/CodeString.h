@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)stringTestEntrance;
 
++ (NSInteger)cubeStep:(NSInteger)m and:(NSInteger)n;
 @end
 
 NS_ASSUME_NONNULL_END

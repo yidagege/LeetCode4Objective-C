@@ -126,8 +126,7 @@ void FindMedianSortedArrays(){
  */
 void LongestPalindrome(){
 //    NSString * string = [LongestPalindrome_05 longestPalindrome:@"bababb"];
-    LongestPalindrome_05 *object = [LongestPalindrome_05 new];
-    NSString * string2 = [object longestPalindrome:@"aba"];
+    NSString * string2 = [LongestPalindrome_05 longestPalindrome3:@"kksbababd"];
     NSLog(@"string");
 }
 
@@ -528,7 +527,7 @@ int main(int argc, const char * argv[]) {
         addTwoNums();
         LongestSubstring();
         FindMedianSortedArrays();
-//        LongestPalindrome();
+        LongestPalindrome();
         zConvert();
         ReverseNum();
         StringToNum();
@@ -564,6 +563,7 @@ int main(int argc, const char * argv[]) {
         
         LargestTimeFromDigits949();
         [CodeString stringTestEntrance];
+        NSInteger count = [CodeString cubeStep:3 and:3];
         [CodeArray arrayTestEntrance];
         [CodeNode nodeTestEntrance];
     }

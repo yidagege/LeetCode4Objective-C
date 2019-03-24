@@ -29,6 +29,7 @@
  输出: 3
  解释: 无重复字符的最长子串是 "wke"，其长度为 3。
  请注意，答案必须是一个子串，"pwke" 是一个子序列 而不是子串。
+ 利用前后两个位置，left，right和一个字典滑动窗口
  */
 + (NSUInteger)lengthOfLongestSubstring:(NSString *)string
 {

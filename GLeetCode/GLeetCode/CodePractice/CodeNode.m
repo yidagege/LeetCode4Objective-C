@@ -82,15 +82,15 @@
     }
     return pre;
     
-    ListNode *new = nil;
+    ListNode *kpre = nil;
     ListNode *knext = nil;
     while (node) {
         knext = node.next;
-        node.next = new;
-        new = node;
+        node.next = kpre;
+        kpre = node;
         node = knext;
     }
-    return new;
+    return kpre;
 }
 
 + (ListNode*)reverseRecursive:(ListNode *)node
